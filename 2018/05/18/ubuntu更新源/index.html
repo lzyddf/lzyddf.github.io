@@ -7,17 +7,17 @@
   
   <title>ubuntu更新源 | Hexo for lzyddf</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1、在修改source.list前，最好先备份一份执行备份命令  $ sudo cp /etc/apt/sources.list /etc/apt/sources.list.old 2、执行命令打开source.list文件：$ sudo vim /etc/apt/source.list 3、复制源以下为清华大学源  # deb cdrom:[Ubuntu 16.04 LTS _Xenial Xe">
+  <meta name="description" content="1、在修改source.list前，最好先备份一份执行备份命令  $ sudo cp /etc/apt/sources.list /etc/apt/sources.list.old 2、执行命令打开source.list文件：$ sudo vim /etc/apt/source.list 3、用新的源覆盖文件里的内容按i开启编辑模式， 以下为清华大学源，复制进去即可  # deb cdrom:[U">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ubuntu更新源">
 <meta property="og:url" content="http://yoursite.com/2018/05/18/ubuntu更新源/index.html">
 <meta property="og:site_name" content="Hexo for lzyddf">
-<meta property="og:description" content="1、在修改source.list前，最好先备份一份执行备份命令  $ sudo cp /etc/apt/sources.list /etc/apt/sources.list.old 2、执行命令打开source.list文件：$ sudo vim /etc/apt/source.list 3、复制源以下为清华大学源  # deb cdrom:[Ubuntu 16.04 LTS _Xenial Xe">
+<meta property="og:description" content="1、在修改source.list前，最好先备份一份执行备份命令  $ sudo cp /etc/apt/sources.list /etc/apt/sources.list.old 2、执行命令打开source.list文件：$ sudo vim /etc/apt/source.list 3、用新的源覆盖文件里的内容按i开启编辑模式， 以下为清华大学源，复制进去即可  # deb cdrom:[U">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-05-18T12:13:19.362Z">
+<meta property="og:updated_time" content="2018-05-18T12:21:36.018Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ubuntu更新源">
-<meta name="twitter:description" content="1、在修改source.list前，最好先备份一份执行备份命令  $ sudo cp /etc/apt/sources.list /etc/apt/sources.list.old 2、执行命令打开source.list文件：$ sudo vim /etc/apt/source.list 3、复制源以下为清华大学源  # deb cdrom:[Ubuntu 16.04 LTS _Xenial Xe">
+<meta name="twitter:description" content="1、在修改source.list前，最好先备份一份执行备份命令  $ sudo cp /etc/apt/sources.list /etc/apt/sources.list.old 2、执行命令打开source.list文件：$ sudo vim /etc/apt/source.list 3、用新的源覆盖文件里的内容按i开启编辑模式， 以下为清华大学源，复制进去即可  # deb cdrom:[U">
   
     <link rel="alternate" href="/atom.xml" title="Hexo for lzyddf" type="application/atom+xml">
   
@@ -90,7 +90,8 @@
 
 $ sudo cp /etc/apt/sources.list /etc/apt/sources.list.old
 </code></pre><h2 id="2、执行命令打开source-list文件："><a href="#2、执行命令打开source-list文件：" class="headerlink" title="2、执行命令打开source.list文件："></a>2、执行命令打开source.list文件：</h2><pre><code>$ sudo vim /etc/apt/source.list
-</code></pre><h2 id="3、复制源"><a href="#3、复制源" class="headerlink" title="3、复制源"></a>3、复制源</h2><pre><code>以下为清华大学源
+</code></pre><h2 id="3、用新的源覆盖文件里的内容"><a href="#3、用新的源覆盖文件里的内容" class="headerlink" title="3、用新的源覆盖文件里的内容"></a>3、用新的源覆盖文件里的内容</h2><pre><code>按i开启编辑模式，
+以下为清华大学源，复制进去即可
 
 # deb cdrom:[Ubuntu 16.04 LTS _Xenial Xerus_ - Release amd64 (20160420.1)]/ xenial main restricted
 deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial main restricted
@@ -103,6 +104,8 @@ deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial-backports main restricted
 deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial-security main restricted
 deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial-security universe
 deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial-security multiverse
+
+按esc退出编辑模式，输入:wq保存并退出（冒号也需要输入）
 </code></pre><h2 id="4、执行更新命令"><a href="#4、执行更新命令" class="headerlink" title="4、执行更新命令"></a>4、执行更新命令</h2><pre><code>$ sudo apt-get update &amp;&amp; apt-get upgrade &amp;&amp;apt-get dist-upgrade
 </code></pre>
       
