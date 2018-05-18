@@ -84,11 +84,11 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="1-在修改source-list前，最好先备份一份"><a href="#1-在修改source-list前，最好先备份一份" class="headerlink" title="1/ 在修改source.list前，最好先备份一份"></a>1/ 在修改source.list前，最好先备份一份</h2><pre><code>执行备份命令
+        <h2 id="1、在修改source-list前，最好先备份一份"><a href="#1、在修改source-list前，最好先备份一份" class="headerlink" title="1、在修改source.list前，最好先备份一份"></a>1、在修改source.list前，最好先备份一份</h2><pre><code>执行备份命令
 
 $ sudo cp /etc/apt/sources.list /etc/apt/sources.list.old
-</code></pre><h2 id="2-执行命令打开source-list文件："><a href="#2-执行命令打开source-list文件：" class="headerlink" title="2/ 执行命令打开source.list文件："></a>2/ 执行命令打开source.list文件：</h2><pre><code>$ sudo vim /etc/apt/source.list
-</code></pre><h2 id="3-复制源"><a href="#3-复制源" class="headerlink" title="3/复制源"></a>3/复制源</h2><pre><code>以下为清华大学源
+</code></pre><h2 id="2、执行命令打开source-list文件："><a href="#2、执行命令打开source-list文件：" class="headerlink" title="2、执行命令打开source.list文件："></a>2、执行命令打开source.list文件：</h2><pre><code>$ sudo vim /etc/apt/source.list
+</code></pre><h2 id="3、复制源"><a href="#3、复制源" class="headerlink" title="3、复制源"></a>3、复制源</h2><pre><code>以下为清华大学源
 
 # deb cdrom:[Ubuntu 16.04 LTS _Xenial Xerus_ - Release amd64 (20160420.1)]/ xenial main restricted
 deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial main restricted
@@ -101,7 +101,7 @@ deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial-backports main restricted
 deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial-security main restricted
 deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial-security universe
 deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial-security multiverse
-</code></pre><h2 id="4-执行更新命令"><a href="#4-执行更新命令" class="headerlink" title="4/执行更新命令"></a>4/执行更新命令</h2><pre><code>$ sudo apt-get update &amp;&amp; apt-get upgrade &amp;&amp;apt-get dist-upgrade
+</code></pre><h2 id="4、执行更新命令"><a href="#4、执行更新命令" class="headerlink" title="4、执行更新命令"></a>4、执行更新命令</h2><pre><code>$ sudo apt-get update &amp;&amp; apt-get upgrade &amp;&amp;apt-get dist-upgrade
 </code></pre>
       
     </div>
