@@ -62,6 +62,146 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-hexo备份本地目录到github" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/05/18/hexo备份本地目录到github/" class="article-date">
+  <time datetime="2018-05-18T13:14:39.000Z" itemprop="datePublished">2018-05-18</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/18/hexo备份本地目录到github/">hexo备份本地目录到github</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="1、添加当前工作目录文件到index"><a href="#1、添加当前工作目录文件到index" class="headerlink" title="1、添加当前工作目录文件到index"></a>1、添加当前工作目录文件到index</h2><pre><code>git add .
+</code></pre><h2 id="2、生成一个提交文件"><a href="#2、生成一个提交文件" class="headerlink" title="2、生成一个提交文件"></a>2、生成一个提交文件</h2><pre><code>git commit -a -m &quot;commit first&quot;
+</code></pre><h2 id="3、推送到github的XXX分支"><a href="#3、推送到github的XXX分支" class="headerlink" title="3、推送到github的XXX分支"></a>3、推送到github的XXX分支</h2><pre><code>git push origin master:XXX
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/05/18/hexo备份本地目录到github/" data-id="cjhbzo9wr0001rhqfo4o2t1lq" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-nodejs与npm的安装与升级" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/05/18/nodejs与npm的安装与升级/" class="article-date">
+  <time datetime="2018-05-18T13:09:37.000Z" itemprop="datePublished">2018-05-18</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/18/nodejs与npm的安装与升级/">nodejs与npm的安装与升级</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="1、在-Github-上获取-Node-js-源码："><a href="#1、在-Github-上获取-Node-js-源码：" class="headerlink" title="1、在 Github 上获取 Node.js 源码："></a>1、在 Github 上获取 Node.js 源码：</h2><pre><code>$ sudo git clone https://github.com/nodejs/node.git
+Cloning into &apos;node&apos;...
+</code></pre><h2 id="修改目录权限："><a href="#修改目录权限：" class="headerlink" title="修改目录权限："></a>修改目录权限：</h2><pre><code>$ sudo chmod -R 755 node
+</code></pre><h2 id="进入node目录"><a href="#进入node目录" class="headerlink" title="进入node目录"></a>进入node目录</h2><pre><code>$ cd node
+</code></pre><h2 id="使用-configure-创建编译文件"><a href="#使用-configure-创建编译文件" class="headerlink" title="使用 ./configure 创建编译文件"></a>使用 ./configure 创建编译文件</h2><pre><code>$ sudo ./configure
+</code></pre><h2 id="下一步，可能时间有点长，耐心等待"><a href="#下一步，可能时间有点长，耐心等待" class="headerlink" title="下一步，可能时间有点长，耐心等待"></a>下一步，可能时间有点长，耐心等待</h2><pre><code>$ sudo make
+</code></pre><p>最后<br>    $ sudo make install</p>
+<h2 id="查看版本"><a href="#查看版本" class="headerlink" title="查看版本"></a>查看版本</h2><pre><code>$ node -v
+v0.10.25
+</code></pre><h2 id="2、安装最新版npm"><a href="#2、安装最新版npm" class="headerlink" title="2、安装最新版npm"></a>2、安装最新版npm</h2><pre><code>$ npm install npm@latest -g
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/05/18/nodejs与npm的安装与升级/" data-id="cjhbzo9wu0002rhqfof7t9hd4" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-ubuntu hexo博客搭建详细步骤" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/05/18/ubuntu hexo博客搭建详细步骤/" class="article-date">
+  <time datetime="2018-05-18T12:56:36.000Z" itemprop="datePublished">2018-05-18</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/18/ubuntu hexo博客搭建详细步骤/">ubuntu hexo博客搭建详细步骤</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="安装nodejs"><a href="#安装nodejs" class="headerlink" title="安装nodejs"></a>安装nodejs</h2><pre><code>$ sudo apt-get install nodejs
+</code></pre><h2 id="安装git"><a href="#安装git" class="headerlink" title="安装git"></a>安装git</h2><pre><code>$ sudo apt-get install git
+</code></pre><h2 id="Github"><a href="#Github" class="headerlink" title="Github"></a>Github</h2><pre><code>需要有github帐号，然后在github上新建一个仓库，一定要命名为username.github.io
+进行git ssh 认证，参考https://segmentfault.com/a/1190000002645623
+</code></pre><h2 id="安装nodejs-然后使用npm安装hexo"><a href="#安装nodejs-然后使用npm安装hexo" class="headerlink" title="安装nodejs,然后使用npm安装hexo"></a>安装nodejs,然后使用npm安装hexo</h2><pre><code>$ npm install -g hexo
+注：这时候可能会报错，需要先更新nodejs与npm版本
+</code></pre><h2 id="创建博客文件夹"><a href="#创建博客文件夹" class="headerlink" title="创建博客文件夹"></a>创建博客文件夹</h2><pre><code>$ hexo init 文件夹的名字(假设为BLOG)
+进入博客文件夹
+$ cd BLOG
+$ npm install  //安装依赖
+</code></pre><h2 id="git配置"><a href="#git配置" class="headerlink" title="git配置"></a>git配置</h2><pre><code>$ cd BLOG
+$ git config --global user.name &quot;username&quot; // username为你自己的github用户名
+$ git config --global user.email &quot;email@example.com&quot;
+</code></pre><h2 id="关联远程仓库"><a href="#关联远程仓库" class="headerlink" title="关联远程仓库"></a>关联远程仓库</h2><pre><code>$ git remote add origin &quot;仓库url&quot;
+</code></pre><h2 id="修改配置文件"><a href="#修改配置文件" class="headerlink" title="修改配置文件 "></a>修改配置文件 </h2><pre><code>修改BLOG目录下的_config.yml里面底部的Deployment部分为
+deploy:
+    type: git
+    repo: git@github.com:username/username.github.io.git
+    branch: master
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/05/18/ubuntu hexo博客搭建详细步骤/" data-id="cjhbzo9ww0003rhqfb8dpe58n" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-ubuntu更新源" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/05/18/ubuntu更新源/" class="article-date">
@@ -109,7 +249,7 @@ deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial-security multiverse
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/18/ubuntu更新源/" data-id="cjhbxasjc00017dqfi06tmlul" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/05/18/ubuntu更新源/" data-id="cjhbzo9wy0004rhqfqoi1xkzb" class="article-share-link">Share</a>
       
       
     </footer>
@@ -157,7 +297,7 @@ www.iconfont.cn
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/18/网址收藏/" data-id="cjhbxasjg00027dqf5vzr0xak" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/05/18/网址收藏/" data-id="cjhbzo9wz0005rhqfco9bt3me" class="article-share-link">Share</a>
       
       
     </footer>
@@ -202,7 +342,7 @@ www.iconfont.cn
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/18/hello-world/" data-id="cjhbxasj400007dqfb8r6543x" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/05/18/hello-world/" data-id="cjhbzo9wg0000rhqf05igicot" class="article-share-link">Share</a>
       
       
     </footer>
@@ -243,15 +383,23 @@ www.iconfont.cn
       <ul>
         
           <li>
+            <a href="/2018/05/18/hexo备份本地目录到github/">hexo备份本地目录到github</a>
+          </li>
+        
+          <li>
+            <a href="/2018/05/18/nodejs与npm的安装与升级/">nodejs与npm的安装与升级</a>
+          </li>
+        
+          <li>
+            <a href="/2018/05/18/ubuntu hexo博客搭建详细步骤/">ubuntu hexo博客搭建详细步骤</a>
+          </li>
+        
+          <li>
             <a href="/2018/05/18/ubuntu更新源/">ubuntu更新源</a>
           </li>
         
           <li>
             <a href="/2018/05/18/网址收藏/">网址收藏</a>
-          </li>
-        
-          <li>
-            <a href="/2018/05/18/hello-world/">Hello World</a>
           </li>
         
       </ul>
