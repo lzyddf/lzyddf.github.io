@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[ubuntu安装VMware-Tools]]></title>
+    <url>%2F2018%2F05%2F19%2Fubuntu%E5%AE%89%E8%A3%85VMware-Tools%2F</url>
+    <content type="text"><![CDATA[1、加载安装文件如果安装按钮是灰色的，右键虚拟机-设置-软盘 使用物理驱动器：自动检测 就可以安装了 2、拷贝加载后，VMware Tools会加载到桌面 右键，Copy 进入本地home/ 右键空白处，Paste 3、解压打开terminal（终端） 输入 tar -xzvf VMwareTools-xxx-xxx.tar.gz（以实际为准） 回车 4、安装进入解压后的目录 从终端执行安装命令 sudo ./vmware-install.pl 然后一直回车就可以了]]></content>
+      <categories>
+        <category>Ubuntu</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[ubuntu安装搜狗拼音输入法]]></title>
+    <url>%2F2018%2F05%2F19%2Fubuntu%E5%AE%89%E8%A3%85%E6%90%9C%E7%8B%97%E6%8B%BC%E9%9F%B3%E8%BE%93%E5%85%A5%E6%B3%95%2F</url>
+    <content type="text"><![CDATA[1、下载文件进入官网http://pinyin.sogou.com/linux，下载自己对应的系统位数安装包 2、打开终端，进入下载目录cd Downloads/ (以实际目录为准) 3、安装sudo dpkg -i sougoupinyin…….deb (以你下载的实际安装包名字为标准) 4、打开Language Support如果报错，就从终端输入该命令 sudo apt-get install -f 成功打开Language Support后，将IBus改为fcitx，然后重启电脑 5、重启后，屏幕右上角会出现键盘图标点击键盘图标，选择Configure Current Input Method 点左下角的 + 取消勾选Only Show Current Language 找到sougou pinyin (一般在最底下)，点ok 6、使用ctrl+空格，切换到搜狗拼音输入法，就可以开始使用啦]]></content>
+      <categories>
+        <category>Ubuntu</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[hexo常用命令笔记]]></title>
+    <url>%2F2018%2F05%2F19%2Fhexo%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E7%AC%94%E8%AE%B0%2F</url>
+    <content type="text"><![CDATA[进入hexo主目录文件夹（假设文件夹名为blog）cd blog 常用命令$ sudo hexo new post &quot;文章名&quot; #新建文章 $ sudo hexo g == hexo generate #生成静态页面到public目录 $ sudo hexo s == hexo server #开启本地预览服务 $ sudo hexo s --debug #启动本地预览并调试 $ sudo hexo d == hexo deploy #部署（到github仓库） $ sudo hexo clean #清除缓存 $ sudo hexo generate --watch #监视文件变动 生成静态页面并部署（到github仓库）下面两个命令的作用是相同的 $ sudo hexo g -d == hexo generate --deploy $ sudo hexo d -g == hexo deploy --generate 服务器$ sudo hexo server -s #静态模式 $ sudo hexo server -p xxx #更改端口为xxx端口 $ sudo hexo server -i xxx.xxx.xxx.xxx #自定义 IP 为 xxx.xxx.xxx.xxx]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[github ssh认证]]></title>
+    <url>%2F2018%2F05%2F19%2Fgithub-ssh%E8%AE%A4%E8%AF%81%2F</url>
+    <content type="text"><![CDATA[1、设置Git的user name和email(即在github注册时填写的)$ git config --global user.name &quot;username&quot; $ git config --global user.email &quot;useremail&quot; 2、生成密钥 $ sudo ssh-keygen -t rsa -C &quot;username or useremail&quot; 如果出现overwrite(y/n)，默认是n，需要在后面填写y并回车 3、添加密钥到ssh-agent$ eval &quot;$(ssh-agent -s)&quot; Agent pid 59566 4、拷贝ssh进入root用户的ssh目录 $ sudo ~/.ssh 使用 $ sudo cat id_rsa.pub或 $ sudo vim id_rsa.pub 将里面的内容复制出来 5、将拷贝出来的ssh添加ssh到github登录github，点击右上角头像-settings-SSH and GPG keys 点击New SSH key添加，标题随意 6.测试$ sudo ssh -T git@github.com 你将会看到： The authenticity of host &apos;github.com (207.97.227.239)&apos; can&apos;t be established. RSA key fingerprint is 16:27:ac:a5:76:28:2d:36:63:1b:56:4d:eb:df:a6:48. Are you sure you want to continue connecting (yes/no)? 选择 yes Hi XXX! You&apos;ve successfully authenticated, but GitHub does not provide shell access. 如果看到Hi后面是你的用户名，就说明成功了]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[hexo备份本地目录到github]]></title>
+    <url>%2F2018%2F05%2F18%2Fhexo%E5%A4%87%E4%BB%BD%E6%9C%AC%E5%9C%B0%E7%9B%AE%E5%BD%95%E5%88%B0github%2F</url>
+    <content type="text"><![CDATA[1、添加当前工作目录文件到indexgit add . 2、生成一个提交文件git commit -a -m &quot;commit first&quot; 3、推送到github的XXX分支git push origin master:XXX]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[nodejs与npm的安装与升级]]></title>
+    <url>%2F2018%2F05%2F18%2Fnodejs%E4%B8%8Enpm%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E5%8D%87%E7%BA%A7%2F</url>
+    <content type="text"><![CDATA[1、在 Github 上获取 Node.js 源码：$ sudo git clone https://github.com/nodejs/node.git Cloning into &apos;node&apos;... 修改目录权限：$ sudo chmod -R 755 node 进入node目录$ cd node 使用 ./configure 创建编译文件$ sudo ./configure 下一步，可能时间有点长，耐心等待$ sudo make 最后 $ sudo make install 查看版本$ node -v v0.10.25 2、安装最新版npm$ npm install npm@latest -g]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[ubuntu hexo博客搭建详细步骤]]></title>
+    <url>%2F2018%2F05%2F18%2Fubuntu%20hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%AF%A6%E7%BB%86%E6%AD%A5%E9%AA%A4%2F</url>
+    <content type="text"><![CDATA[安装nodejs$ sudo apt-get install nodejs 安装git$ sudo apt-get install git Github需要有github帐号，然后在github上新建一个仓库，一定要命名为username.github.io 进行git ssh 认证，参考https://segmentfault.com/a/1190000002645623 安装nodejs,然后使用npm安装hexo$ npm install -g hexo 注：这时候可能会报错，需要先更新nodejs与npm版本 创建博客文件夹$ hexo init 文件夹的名字(假设为BLOG) 进入博客文件夹 $ cd BLOG $ npm install //安装依赖 git配置$ cd BLOG $ git config --global user.name &quot;username&quot; // username为你自己的github用户名 $ git config --global user.email &quot;email@example.com&quot; 关联远程仓库$ git remote add origin &quot;仓库url&quot; 修改配置文件 修改BLOG目录下的_config.yml里面底部的Deployment部分为 deploy: type: git repo: git@github.com:username/username.github.io.git branch: master]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[ubuntu更新源]]></title>
+    <url>%2F2018%2F05%2F18%2Fubuntu%E6%9B%B4%E6%96%B0%E6%BA%90%2F</url>
+    <content type="text"><![CDATA[1、在修改source.list前，最好先备份一份执行备份命令 $ sudo cp /etc/apt/sources.list /etc/apt/sources.list.old 2、执行命令打开source.list文件：$ sudo vim /etc/apt/source.list 3、用新的源覆盖文件里的内容按i开启编辑模式， 以下为清华大学源，复制进去即可 # deb cdrom:[Ubuntu 16.04 LTS _Xenial Xerus_ - Release amd64 (20160420.1)]/ xenial main restricted deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial main restricted deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial-updates main restricted deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial universe deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial-updates universe deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial multiverse deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial-updates multiverse deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial-backports main restricted universe multiverse deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial-security main restricted deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial-security universe deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial-security multiverse 按esc退出编辑模式，输入:wq保存并退出（冒号也需要输入） 4、执行更新命令$ sudo apt-get update &amp;&amp; apt-get upgrade &amp;&amp;apt-get dist-upgrade]]></content>
+      <categories>
+        <category>Ubuntu</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[网址收藏]]></title>
+    <url>%2F2018%2F05%2F18%2F%E7%BD%91%E5%9D%80%E6%94%B6%E8%97%8F%2F</url>
+    <content type="text"><![CDATA[字体库：font.chinaz.com shufazidian.com 图库：www.pexels.com www.pixabay.com www.stocksnap.com www.librestock.com 无白底：pngimg.com 图片放大：bigjpg.com 图标：www.51yuansu.com www.easyicon.net www.iconfont.cn 动作图标：pictogram2.com]]></content>
+      <categories>
+        <category>Other</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[Hello World]]></title>
+    <url>%2F2018%2F05%2F18%2Fhello-world%2F</url>
+    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
+  </entry>
+</search>
