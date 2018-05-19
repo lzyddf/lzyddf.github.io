@@ -2,6 +2,7 @@
 title: ubuntu更新源
 date: 2018-05-18 20:10:01
 tags:
+categories: Ubuntu
 ---
 1、在修改source.list前，最好先备份一份
 ---
