@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="1、设置Git的user name和email(即在github注册时填写的)$ git config --global user.name &amp;quot;username&amp;quot; $ git config --global user.email &amp;quot;useremail&amp;quot; 2、生成密钥    $ sudo ssh-keygen -t rsa -C &amp;quot;username">
+<meta name="description" content="1、设置Git的user name和email(即在github注册时填写的)$ git config --global user.name &amp;quot;username&amp;quot; $ git config --global user.email &amp;quot;useremail&amp;quot; 2、生成密钥$ sudo ssh-keygen -t rsa -C &amp;quot;username or u">
 <meta property="og:type" content="article">
 <meta property="og:title" content="github ssh认证">
 <meta property="og:url" content="http://yoursite.com/2018/05/19/github-ssh认证/index.html">
 <meta property="og:site_name" content="Lzyddf&#39;s Hexo">
-<meta property="og:description" content="1、设置Git的user name和email(即在github注册时填写的)$ git config --global user.name &amp;quot;username&amp;quot; $ git config --global user.email &amp;quot;useremail&amp;quot; 2、生成密钥    $ sudo ssh-keygen -t rsa -C &amp;quot;username">
+<meta property="og:description" content="1、设置Git的user name和email(即在github注册时填写的)$ git config --global user.name &amp;quot;username&amp;quot; $ git config --global user.email &amp;quot;useremail&amp;quot; 2、生成密钥$ sudo ssh-keygen -t rsa -C &amp;quot;username or u">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-19T00:23:09.319Z">
+<meta property="og:updated_time" content="2018-05-20T00:14:28.244Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="github ssh认证">
-<meta name="twitter:description" content="1、设置Git的user name和email(即在github注册时填写的)$ git config --global user.name &amp;quot;username&amp;quot; $ git config --global user.email &amp;quot;useremail&amp;quot; 2、生成密钥    $ sudo ssh-keygen -t rsa -C &amp;quot;username">
+<meta name="twitter:description" content="1、设置Git的user name和email(即在github注册时填写的)$ git config --global user.name &amp;quot;username&amp;quot; $ git config --global user.email &amp;quot;useremail&amp;quot; 2、生成密钥$ sudo ssh-keygen -t rsa -C &amp;quot;username or u">
 
 
 
@@ -333,15 +333,21 @@
       
         <h2 id="1、设置Git的user-name和email-即在github注册时填写的"><a href="#1、设置Git的user-name和email-即在github注册时填写的" class="headerlink" title="1、设置Git的user name和email(即在github注册时填写的)"></a>1、设置Git的user name和email(即在github注册时填写的)</h2><pre><code>$ git config --global user.name &quot;username&quot;
 $ git config --global user.email &quot;useremail&quot;
-</code></pre><h2 id="2、生成密钥"><a href="#2、生成密钥" class="headerlink" title="2、生成密钥"></a>2、生成密钥</h2><pre><code>    $ sudo ssh-keygen -t rsa -C &quot;username or useremail&quot;
+</code></pre><h2 id="2、生成密钥"><a href="#2、生成密钥" class="headerlink" title="2、生成密钥"></a>2、生成密钥</h2><pre><code>$ sudo ssh-keygen -t rsa -C &quot;username or useremail&quot;
 如果出现overwrite(y/n)，默认是n，需要在后面填写y并回车
 </code></pre><h2 id="3、添加密钥到ssh-agent"><a href="#3、添加密钥到ssh-agent" class="headerlink" title="3、添加密钥到ssh-agent"></a>3、添加密钥到ssh-agent</h2><pre><code>$ eval &quot;$(ssh-agent -s)&quot;
 Agent pid 59566
 </code></pre><h2 id="4、拷贝ssh"><a href="#4、拷贝ssh" class="headerlink" title="4、拷贝ssh"></a>4、拷贝ssh</h2><pre><code>进入root用户的ssh目录
 $ sudo ~/.ssh
-</code></pre><p>使用    $ sudo cat id_rsa.pub<br>或    $ sudo vim id_rsa.pub 将里面的内容复制出来</p>
-<h2 id="5、将拷贝出来的ssh添加ssh到github"><a href="#5、将拷贝出来的ssh添加ssh到github" class="headerlink" title="5、将拷贝出来的ssh添加ssh到github"></a>5、将拷贝出来的ssh添加ssh到github</h2><pre><code>登录github，点击右上角头像-settings-SSH and GPG keys
+
+使用
+$ sudo cat id_rsa.pub
+或
+$ sudo vim id_rsa.pub
+将里面的内容复制出来
+</code></pre><h2 id="5、将拷贝出来的ssh添加ssh到github"><a href="#5、将拷贝出来的ssh添加ssh到github" class="headerlink" title="5、将拷贝出来的ssh添加ssh到github"></a>5、将拷贝出来的ssh添加ssh到github</h2><pre><code>登录github，点击右上角头像-settings-SSH and GPG keys
 点击New SSH key添加，标题随意
+将复制出来的ssh秘钥粘贴进去并保存
 </code></pre><h2 id="6-测试"><a href="#6-测试" class="headerlink" title="6.测试"></a>6.测试</h2><pre><code>$ sudo ssh -T git@github.com
 你将会看到：
 
@@ -465,7 +471,7 @@ $ sudo ~/.ssh
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
