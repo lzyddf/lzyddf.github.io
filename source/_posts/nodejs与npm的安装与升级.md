@@ -29,4 +29,4 @@ categories: Hexo
 	v0.10.25
 2、安装最新版npm
 ---
-	$ npm install npm@latest -g
+	$ sudo npm install npm@latest -g
