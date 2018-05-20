@@ -21,13 +21,12 @@ categories: Hexo
 ---
 	$ sudo make
 最后
+---
 	$ sudo make install
 查看版本
 ---
 	$ node -v
 	v0.10.25
-
-
 2、安装最新版npm
 ---
 	$ npm install npm@latest -g

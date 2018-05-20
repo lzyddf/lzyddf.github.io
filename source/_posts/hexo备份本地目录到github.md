@@ -6,11 +6,11 @@ categories: Hexo
 ---
 1、添加当前工作目录文件到index
 ---
-	git add .
+	$ sudo git add .
 2、生成一个提交文件
 ---
-	git commit -a -m "commit first"
+	$ sudo git commit -a -m "commit first"
 3、推送到github的XXX分支
 ---
-	git push origin master:XXX
+	$ sudo git push origin master:XXX
 

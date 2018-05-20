@@ -10,7 +10,7 @@ categories: Hexo
     	$ git config --global user.email "useremail"
 2、生成密钥
 ---
-    	$ sudo ssh-keygen -t rsa -C "username or useremail"
+	$ sudo ssh-keygen -t rsa -C "username or useremail"
 	如果出现overwrite(y/n)，默认是n，需要在后面填写y并回车
 3、添加密钥到ssh-agent
 ---
@@ -20,12 +20,17 @@ categories: Hexo
 ---
 	进入root用户的ssh目录
 	$ sudo ~/.ssh
-使用	$ sudo cat id_rsa.pub
-或	$ sudo vim id_rsa.pub 将里面的内容复制出来
+
+	使用
+	$ sudo cat id_rsa.pub
+	或
+	$ sudo vim id_rsa.pub
+	将里面的内容复制出来
 5、将拷贝出来的ssh添加ssh到github
 ---
 	登录github，点击右上角头像-settings-SSH and GPG keys
 	点击New SSH key添加，标题随意
+	将复制出来的ssh秘钥粘贴进去并保存
 6.测试
 ---
 	$ sudo ssh -T git@github.com

@@ -9,14 +9,14 @@ categories: Ubuntu
 	进入官网http://pinyin.sogou.com/linux，下载自己对应的系统位数安装包
 2、打开终端，进入下载目录
 ---
-	cd Downloads/  (以实际目录为准)
+	$ cd Downloads/  (以实际目录为准)
 3、安装
 ---
-	sudo dpkg -i sougoupinyin…….deb (以你下载的实际安装包名字为标准)
+	$ sudo dpkg -i sougoupinyin…….deb (以你下载的实际安装包名字为标准)
 4、打开Language Support
 ---
 	如果报错，就从终端输入该命令
-	sudo apt-get install -f 
+	$ sudo apt-get install -f 
 	成功打开Language Support后，将IBus改为fcitx，然后重启电脑
 5、重启后，屏幕右上角会出现键盘图标
 ---

@@ -6,7 +6,7 @@ categories: Hexo
 ---
 进入hexo主目录文件夹（假设文件夹名为blog）
 ---
-	cd blog
+	$ cd blog
 常用命令
 ---
 	$ sudo hexo new post "文章名" #新建文章
