@@ -1,5 +1,5 @@
 ---
-title: hexo备份本地目录到github
+title: hexo到github的推送和拉取
 date: 2018-05-18 21:14:39
 tags:
 categories: Hexo
