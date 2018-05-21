@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[xterm中文显示]]></title>
+    <url>%2F2018%2F05%2F21%2Fxterm%E4%B8%AD%E6%96%87%E6%98%BE%E7%A4%BA%2F</url>
+    <content type="text"><![CDATA[在家目录新建文件.Xdefaults $ sudo vi ~/.Xdefaults 加入以下内容 *VT100.font: 9x15 *VT100.utf8Fonts.font: -misc-fixed-medium-r-normal--18-120-100-100-c-90-iso10646-1 保存并退出 VNC远程登录，打开终端输入下列命令，让系统加载并生效 # xrdb -merge ~/.Xdefaults 回车 编辑文件的时候就可以正常显示中文啦]]></content>
+      <categories>
+        <category>Ubuntu</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[ubuntu服务器开启图形界面]]></title>
+    <url>%2F2018%2F05%2F21%2Fubuntu%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%BC%80%E5%90%AF%E5%9B%BE%E5%BD%A2%E7%95%8C%E9%9D%A2%2F</url>
+    <content type="text"><![CDATA[开启图形界面1、获取root用户权限 $ sudo su root 2、更新系统软件列表与软件包 # apt-get update # apt-get upgrade 3、安装xfce # apt-get install xfce4 4、安装VNC # apt-get install vnc4server 5、配置VNC 输入下面命令，启动VNC,并让它生成一个配置文件。 这里会让你输入一个 连接密码，请记住这个密码。 # vncserver :1 然后输入下面命令，以VNC关闭进程。防止因为文件被占用而修改配置文件时报错。 # vncserver -kill :1 然后输入下面命令，以打开VNC启动配置文件。 # vi ~/.vnc/xstartup 在 &quot;x-window-manager &amp;&quot; 前面添加一个&quot;#&quot;，以注释不再需要的配置。 然后在文件最后加入一段配置信息 sesion-manager &amp; xfdesktop &amp; xfce4-panel &amp; xfce4-menu-plugin &amp; xfsettingsd &amp; xfconfd &amp; xfwm4 &amp; 保存并退出（按两次ESC退出编辑模式，输入&quot;:wq&quot;，回车） 6、防火墙配置 打开服务器控制台的防火墙，添加规则 自定义-TCP-5901 重启服务器 VNC配置1、服务器上的配置 先获取root用户权限 $ sudo su root 启动vnc服务 # vncserver :1 回车 2、在本地安装VNC客户端 官网：https://www.realvnc.com/en/connect/download/viewer/ 3、客户端配置 安装好后，在客户端安装目录找到vncviewer，双击打开 在客户端界面的文本框输入&quot;公网IP:1&quot;（引号不用，公网IP就是服务器的IP地址） 输入在服务器配置VNC时设置的密码，OK，就能连接到图形界面了 解决中文乱码问题1、获取root用户权限 $ sudo su root 2、在终端依次输入下列命令 # aptitude install font-manager # aptitude install ttf-arphic-uming # aptitude install ttf-arphic-ukai # aptitude install ttf-wqy-zenhei xfonts-wqy ttf-wqy-microhei # aptitude install fonts-cwtex-fs # aptitude install ttf-hanazono # apt-get install ttf-mscorefonts-installer # mkfontscale # mkfontdir # fc-cache -fv 3、重启VNC服务，即可正常显示中文]]></content>
+      <categories>
+        <category>Ubuntu</category>
+      </categories>
+  </entry>
+  <entry>
     <title><![CDATA[文学摘录]]></title>
     <url>%2F2018%2F05%2F20%2F%E6%96%87%E5%AD%A6%E6%91%98%E5%BD%95%2F</url>
     <content type="text"><![CDATA[《瓦尔登湖》人们所做的邪恶死后还活着。 --莎士比亚《尤科乌斯·凯撒》 我是我眺望的一切景色的君王， 我在那里的权力无可置疑。 --威廉·柯珀 一切悟性都随着清晨苏醒。 --《吠陀经》 坐在精神的世界里驰骋，这是我从书中获得的优势。 一杯美酒即令人沉醉，当喝下深奥的学说的琼浆的时候，我便体验到了这种快乐。 --米尔·卡马尔·乌丁·马斯特 一条恶狗的尾巴可以被烤热，挤压，用带子捆绑起来， 但在让它受了十二年的苦之后，它还将保持其自然的形状。 把世界留给了黑暗，也留给了我。 --托马斯·格雷《墓园挽歌》 哀痛过早地毁灭了悲伤的人； 托斯卡的美丽女儿， 她在这生者的世界里来日无多。 --奥西恩《英雄之爱》 让们到达那里，挤满了小小的房子， 不是为了寻找那里所没有的款待； 休息就是他们的宴会，一切顺其自然， 最高尚的思想有着最大的满足。 --斯宾塞《仙后》 当它说话的时候，它的双翼会时而展开， 好像它要飞翔，却又把双翼合拢起来。 --夸尔斯《牧羊人的神谕》 Nec bella fuerunt, Faginus astabat dum scyphus ante dapes. 当人们需要的只是山毛榉木制的碗的时候， 也就没有战争来骚扰人们。 不要让谋生成为你的工作，而是让你的娱乐成为你的工作； 要享受土地的乐趣，但不要拥有土地。 从未听到被捕的雌鸟说， 猎手们并不是圣徒。 --乔叟《坎特伯雷故事集》 求与梵天合一，则制心克体，行诸善事，必不可弃。 --《吠陀经》]]></content>
