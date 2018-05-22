@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[atom编辑器的安装与使用]]></title>
+    <url>%2F2018%2F05%2F22%2Fatom%E7%BC%96%E8%BE%91%E5%99%A8%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8%2F</url>
+    <content type="text"><![CDATA[安装通过官网源下载最新版 $ sudo wget https://atom.io/download/deb -O atom64.deb $ sudo dpkg -i atom64.deb 这时候在图形界面打开atom会报错解决办法 $ sudo cp /usr/lib/x86_64-linux-gnu/libxcb.so.1 /usr/share/atom/ $ cd /usr/share/atom $ sudo sed -i &apos;s/BIG-REQUESTS/_IG-REQUESTS/&apos; libxcb.so.1]]></content>
+      <categories>
+        <category>Ubuntu</category>
+      </categories>
+  </entry>
+  <entry>
     <title><![CDATA[xterm中文显示]]></title>
     <url>%2F2018%2F05%2F21%2Fxterm%E4%B8%AD%E6%96%87%E6%98%BE%E7%A4%BA%2F</url>
     <content type="text"><![CDATA[在家目录新建文件.Xdefaults $ sudo vi ~/.Xdefaults 加入以下内容 *VT100.font: 9x15 *VT100.utf8Fonts.font: -misc-fixed-medium-r-normal--18-120-100-100-c-90-iso10646-1 保存并退出 VNC远程登录，打开终端输入下列命令，让系统加载并生效 # xrdb -merge ~/.Xdefaults 回车 编辑文件的时候就可以正常显示中文啦]]></content>
