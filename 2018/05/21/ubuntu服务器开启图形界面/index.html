@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="开启图形界面1、获取root用户权限     $ sudo su root 2、更新系统软件列表与软件包     # apt-get update     # apt-get upgrade 3、安装xfce     # apt-get install xfce4 4、安装VNC     # apt-get install vnc4server 5、配置VNC     输入下面命令，启动VNC,并">
+<meta name="description" content="开启图形界面1、获取root用户权限     $ sudo su root 2、更新系统软件列表与软件包     # apt-get update     # apt-get upgrade 3、安装gnome核心组件     # apt-get install --no-install-recommends ubuntu-desktop gnome-panel gnome-settings-da">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ubuntu服务器开启图形界面">
 <meta property="og:url" content="http://yoursite.com/2018/05/21/ubuntu服务器开启图形界面/index.html">
 <meta property="og:site_name" content="Lzyddf&#39;s Hexo">
-<meta property="og:description" content="开启图形界面1、获取root用户权限     $ sudo su root 2、更新系统软件列表与软件包     # apt-get update     # apt-get upgrade 3、安装xfce     # apt-get install xfce4 4、安装VNC     # apt-get install vnc4server 5、配置VNC     输入下面命令，启动VNC,并">
+<meta property="og:description" content="开启图形界面1、获取root用户权限     $ sudo su root 2、更新系统软件列表与软件包     # apt-get update     # apt-get upgrade 3、安装gnome核心组件     # apt-get install --no-install-recommends ubuntu-desktop gnome-panel gnome-settings-da">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-21T09:56:55.900Z">
+<meta property="og:updated_time" content="2018-05-22T13:58:04.289Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ubuntu服务器开启图形界面">
-<meta name="twitter:description" content="开启图形界面1、获取root用户权限     $ sudo su root 2、更新系统软件列表与软件包     # apt-get update     # apt-get upgrade 3、安装xfce     # apt-get install xfce4 4、安装VNC     # apt-get install vnc4server 5、配置VNC     输入下面命令，启动VNC,并">
+<meta name="twitter:description" content="开启图形界面1、获取root用户权限     $ sudo su root 2、更新系统软件列表与软件包     # apt-get update     # apt-get upgrade 3、安装gnome核心组件     # apt-get install --no-install-recommends ubuntu-desktop gnome-panel gnome-settings-da">
 
 
 
@@ -336,8 +336,8 @@
 2、更新系统软件列表与软件包
     # apt-get update
     # apt-get upgrade
-3、安装xfce
-    # apt-get install xfce4
+3、安装gnome核心组件
+    # apt-get install --no-install-recommends ubuntu-desktop gnome-panel gnome-settings-daemon metacity nautilus gnome-terminal -y
 4、安装VNC
     # apt-get install vnc4server
 5、配置VNC
@@ -350,11 +350,10 @@
         # vi ~/.vnc/xstartup
     在 &quot;x-window-manager &amp;&quot; 前面添加一个&quot;#&quot;，以注释不再需要的配置。
     然后在文件最后加入一段配置信息
-        sesion-manager &amp; xfdesktop &amp; xfce4-panel &amp;  
-        xfce4-menu-plugin &amp;  
-        xfsettingsd &amp;  
-        xfconfd &amp;  
-        xfwm4 &amp; 
+        gnome-panel &amp;
+        gnome-settings-daemon &amp;
+        metacity &amp;
+        nautilus &amp;
     保存并退出（按两次ESC退出编辑模式，输入&quot;:wq&quot;，回车）
 6、防火墙配置
     打开服务器控制台的防火墙，添加规则
