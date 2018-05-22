@@ -11,8 +11,8 @@ categories: Ubuntu
 	2、更新系统软件列表与软件包
 		# apt-get update
 		# apt-get upgrade
-	3、安装xfce
-		# apt-get install xfce4
+	3、安装gnome核心组件
+		# apt-get install --no-install-recommends ubuntu-desktop gnome-panel gnome-settings-daemon metacity nautilus gnome-terminal -y
 	4、安装VNC
 		# apt-get install vnc4server
 	5、配置VNC
@@ -25,11 +25,10 @@ categories: Ubuntu
 			# vi ~/.vnc/xstartup
 		在 "x-window-manager &" 前面添加一个"#"，以注释不再需要的配置。
 		然后在文件最后加入一段配置信息
-			sesion-manager & xfdesktop & xfce4-panel &  
-			xfce4-menu-plugin &  
-			xfsettingsd &  
-			xfconfd &  
-			xfwm4 & 
+			gnome-panel &
+			gnome-settings-daemon &
+			metacity &
+			nautilus &
 		保存并退出（按两次ESC退出编辑模式，输入":wq"，回车）
 	6、防火墙配置
 		打开服务器控制台的防火墙，添加规则
