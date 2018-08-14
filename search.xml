@@ -1,14 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[进制表]]></title>
-    <url>%2F2018%2F08%2F14%2F%E8%BF%9B%E5%88%B6%E8%A1%A8%2F</url>
-    <content type="text"><![CDATA[16进制加法表1+1= 21+2= 3 | 2+2= 41+3= 4 | 2+3= 5 | 3+3= 61+4= 5 | 2+4= 6 | 3+4= 7 | 4+4= 81+5= 6 | 2+5= 7 | 3+5= 8 | 4+5= 9 | 5+5= A1+6= 7 | 2+6= 8 | 3+6= 9 | 4+6= A | 5+6= B | 6+6= C1+7= 8 | 2+7= 9 | 3+7= A | 4+7= B | 5+7= C | 6+7= D | 7+7= E1+8= 9 | 2+8= A | 3+8= B | 4+8= C | 5+8= D | 6+8= E | 7+8= F | 8+8= 101+9= A | 2+9= B | 3+9= C | 4+9= D | 5+9= E | 6+9= F | 7+9= 10 | 8+9= 11 | 9+9= 121+A= B | 2+A= C | 3+A= D | 4+A= E | 5+A= F | 6+A= 10 | 7+A= 11 | 8+A= 12 | 9+A= 13 | A+A= 141+B= C | 2+B= D | 3+B= E | 4+B= F | 5+B= 10 | 6+B= 11 | 7+B= 12 | 8+B= 13 | 9+B= 14 | A+B= 15 | B+B= 161+C= D | 2+C= E | 3+C= F | 4+C= 10 | 5+C= 11 | 6+C= 12 | 7+C= 13 | 8+C= 14 | 9+C= 15 | A+C= 16 | B+C= 17 | C+C= 181+D= E | 2+D= F | 3+D= 10 | 4+D= 11 | 5+D= 12 | 6+D= 13 | 7+D= 14 | 8+D= 15 | 9+D= 16 | A+D= 17 | B+D= 18 | C+D= 19 | D+D= 1A1+E= F | 2+E= 10 | 3+E= 11 | 4+E= 12 | 5+E= 13 | 6+E= 14 | 7+E= 15 | 8+E= 16 | 9+E= 17 | A+E= 18 | B+E= 19 | C+E= 1A | D+E= 1B | E+E= 1C1+F= 10 | 2+F= 11 | 3+F= 12 | 4+F= 13 | 5+F= 14 | 6+F= 15 | 7+F= 16 | 8+F= 17 | 9+F= 18 | A+F= 19 | B+F= 1A | C+F= 1B | D+F= 1C | E+F= 1D | F+F= 1E 16进制乘法表11= 112= 2 | 22= 413= 3 | 23= 6 | 33= 914= 4 | 24= 8 | 34= C | 44= 1015= 5 | 25= A | 35= F | 45= 14 | 55= 1916= 6 | 26= C | 36= 12 | 46= 18 | 56= 1E | 66= 2417= 7 | 27= E | 37= 15 | 47= 1C | 57= 23 | 67= 2A | 77= 3118= 8 | 28= 10 | 38= 18 | 48= 20 | 58= 28 | 68= 30 | 78= 38 | 88= 4019= 9 | 29= 12 | 39= 1B | 49= 24 | 59= 2D | 69= 36 | 79= 3F | 89= 48 | 99= 511A= A | 2A= 14 | 3A= 1E | 4A= 28 | 5A= 32 | 6A= 3C | 7A= 46 | 8A= 50 | 9A= 5A | AA= 641B= B | 2B= 16 | 3B= 21 | 4B= 2C | 5B= 37 | 6B= 42 | 7B= 4D | 8B= 58 | 9B= 53 | AB= 5E | BB= 691C= C | 2C= 18 | 3C= 24 | 4C= 30 | 5C= 3C | 6C= 48 | 7C= 54 | 8C= 60 | 9C= 6C | AC= 78 | BC= 84 | CC= 901D= D | 2D= 1A | 3D= 27 | 4D= 34 | 5D= 41 | 6D= 4E | 7D= 5B | 8D= 68 | 9D= 75 | AD= 82 | BD= 8F | CD= 9C | DD= A91E= E | 2E= 1C | 3E= 2A | 4E= 38 | 5E= 46 | 6E= 54 | 7E= 62 | 8E= 70 | 9E= 7E | AE= 8C | BE= 9A | CE= A8 | DE= B6 | EE= C41F= F | 2F= 1E | 3F= 2D | 4F= 3C | 5F= 4B | 6F= 5A | 7F= 69 | 8F= 78 | 9F= 87 | AF= 96 | BF= A5 | CF= B4 | DF= C3 | EF= D2 | FF= E1]]></content>
-      <categories>
-        <category>逆向</category>
-      </categories>
-  </entry>
-  <entry>
     <title><![CDATA[atom编辑器的安装与使用]]></title>
     <url>%2F2018%2F05%2F22%2Fatom%E7%BC%96%E8%BE%91%E5%99%A8%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8%2F</url>
     <content type="text"><![CDATA[安装通过官网源下载最新版 $ sudo wget https://atom.io/download/deb -O atom64.deb $ sudo dpkg -i atom64.deb 这时候在图形界面打开atom会报错解决办法 $ sudo cp /usr/lib/x86_64-linux-gnu/libxcb.so.1 /usr/share/atom/ $ cd /usr/share/atom $ sudo sed -i &apos;s/BIG-REQUESTS/_IG-REQUESTS/&apos; libxcb.so.1]]></content>
