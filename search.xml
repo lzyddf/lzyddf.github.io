@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[C语言空函数转汇编]]></title>
+    <url>%2F2018%2F09%2F11%2FC%E8%AF%AD%E8%A8%80%E7%A9%BA%E5%87%BD%E6%95%B0%E8%BD%AC%E6%B1%87%E7%BC%96%2F</url>
+    <content type="text"><![CDATA[//保存原来栈底 push ebp //提升堆栈 mov ebp,esp sub esp,0x40 //保存现场 push esi push edi push ebx //填充缓存区 mov eax,0xCCCCCCCC mov ecx,0x10 lea edi,dword ptr ds:[ebp-0x40] rep stosd //该函数真正要执行的功能 ...... //恢复现场 pop ebx pop edi pop esi //恢复堆栈 mov esp,ebp pop ebp //返回 ret]]></content>
+      <categories>
+        <category>汇编</category>
+      </categories>
+  </entry>
+  <entry>
     <title><![CDATA[汇编条件转移指令]]></title>
     <url>%2F2018%2F08%2F24%2F%E6%B1%87%E7%BC%96%E6%9D%A1%E4%BB%B6%E8%BD%AC%E7%A7%BB%E6%8C%87%E4%BB%A4%2F</url>
     <content type="text"><![CDATA[指令 含义 检测的相关标志位 jcxz cx为0则转移 cx=0 je 等于则转移 zf=1 jne 不等于则转移 zf=0 jb 低于则转移 cf=1 jnb 不低于则转移 cf=0 ja 高于则转移 cf=0且zf=0 jna 不高于则转移 cf=1或zf=1]]></content>
