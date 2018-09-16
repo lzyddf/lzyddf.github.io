@@ -19,7 +19,7 @@
   <entry>
     <title><![CDATA[数据表操作]]></title>
     <url>%2F2018%2F09%2F16%2F%E6%95%B0%E6%8D%AE%E8%A1%A8%E6%93%8D%E4%BD%9C%2F</url>
-    <content type="text"><![CDATA[选择数据库：use db_name; 显示当前数据库下的所有数据表（文件）show tables; 创建数据表：create table table_name(列名1 列的类型 列的属性，列名2 列的类型 列的属性……）; 注：不能以数字开头 列的属性： null | not null：该列是否为空 default default_value:该列的默认值 default_value默认值可以是字符串，也可以是整型 auto_increment：该列为自动增长型，或者自动编号，要求该列必须是整型，一个表只能有一个自动增长型 primary key：主键，该列的指具有唯一性，且不能为空，一个表只能有一个主键 id字段属性必须有：not null auto _increment primary key 例：创建一个新闻(news)数据表 create table news( id int not null auto_increment primary key, //编号 title varchar(100) not null, //标题 author varchar(20) not null, //作者 source varchar(30) not null, //来源 hits int(5) not null default 0, //点击次数 is_ppt tinyint(1) not null default 0, //是否是幻灯新闻 content text null, //新闻内容 addate int(16) not null //添加时间 ); 显示字段describe table_name 删除数据表drop table [if exists] table_name; 例：drop table news; 修改数据表alter table]]></content>
+    <content type="text"><![CDATA[选择数据库：use db_name; 显示当前数据库下的所有数据表（文件）：show tables; 创建数据表：create table table_name(列名1 列的类型 列的属性，列名2 列的类型 列的属性……）; 注：不能以数字开头 列的属性： null | not null：该列是否为空 default default_value:该列的默认值 注：default_value默认值可以是字符串，也可以是整型 auto_increment：该列为自动增长型，或者自动编号，要求该列必须是整型，一个表只能有一个自动增长型 primary key：主键，该列的指具有唯一性，且不能为空，一个表只能有一个主键 id字段属性必须有：not null auto _increment primary key 例：创建一个新闻(news)数据表 create table news( id int not null auto_increment primary key, //编号 title varchar(100) not null, //标题 author varchar(20) not null, //作者 source varchar(30) not null, //来源 hits int(5) not null default 0, //点击次数 is_ppt tinyint(1) not null default 0, //是否是幻灯新闻 content text null, //新闻内容 addate int(16) not null //添加时间 ); 显示字段：describe table_name 删除数据表：drop table [if exists] table_name; 例：drop table news; 修改数据表：alter table]]></content>
       <categories>
         <category>Mysql</category>
       </categories>
@@ -27,7 +27,7 @@
   <entry>
     <title><![CDATA[数据库操作]]></title>
     <url>%2F2018%2F09%2F16%2F%E6%95%B0%E6%8D%AE%E5%BA%93%E6%93%8D%E4%BD%9C%2F</url>
-    <content type="text"><![CDATA[创建数据库：create database [if not exists] db_name [charset utf8]; 查看数据库默认字符集：show create database db_name; 删除数据库drop database [if exists] db_name; 通过命令来修改数据库的字符集：例：alter database db_name default character set utf8; 关于导入sql文件注：导入sql文件时，要先创建数据库，然后再导入数据，且创建的数据库的字符集必须是utf8，否则会乱码]]></content>
+    <content type="text"><![CDATA[创建数据库：create database [if not exists] db_name [charset utf8]; 查看数据库默认字符集：show create database db_name; 删除数据库:drop database [if exists] db_name; 通过命令来修改数据库的字符集：例：alter database db_name default character set utf8; 关于导入sql文件注：导入sql文件时，要先创建数据库，然后再导入数据，且创建的数据库的字符集必须是utf8，否则会乱码]]></content>
       <categories>
         <category>Mysql</category>
       </categories>

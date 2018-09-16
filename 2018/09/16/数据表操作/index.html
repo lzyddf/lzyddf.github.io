@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="选择数据库：use db_name; 显示当前数据库下的所有数据表（文件）show tables; 创建数据表：create table table_name(列名1 列的类型 列的属性，列名2 列的类型 列的属性……）; 注：不能以数字开头 列的属性：     null | not null：该列是否为空     default default_value:该列的默认值         defa">
+<meta name="description" content="选择数据库：use db_name; 显示当前数据库下的所有数据表（文件）：show tables; 创建数据表：create table table_name(列名1 列的类型 列的属性，列名2 列的类型 列的属性……）; 注：不能以数字开头 列的属性：     null | not null：该列是否为空     default default_value:该列的默认值         注：d">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数据表操作">
 <meta property="og:url" content="http://yoursite.com/2018/09/16/数据表操作/index.html">
 <meta property="og:site_name" content="Lzyddf&#39;s Hexo">
-<meta property="og:description" content="选择数据库：use db_name; 显示当前数据库下的所有数据表（文件）show tables; 创建数据表：create table table_name(列名1 列的类型 列的属性，列名2 列的类型 列的属性……）; 注：不能以数字开头 列的属性：     null | not null：该列是否为空     default default_value:该列的默认值         defa">
+<meta property="og:description" content="选择数据库：use db_name; 显示当前数据库下的所有数据表（文件）：show tables; 创建数据表：create table table_name(列名1 列的类型 列的属性，列名2 列的类型 列的属性……）; 注：不能以数字开头 列的属性：     null | not null：该列是否为空     default default_value:该列的默认值         注：d">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-16T04:42:41.519Z">
+<meta property="og:updated_time" content="2018-09-16T04:48:24.996Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据表操作">
-<meta name="twitter:description" content="选择数据库：use db_name; 显示当前数据库下的所有数据表（文件）show tables; 创建数据表：create table table_name(列名1 列的类型 列的属性，列名2 列的类型 列的属性……）; 注：不能以数字开头 列的属性：     null | not null：该列是否为空     default default_value:该列的默认值         defa">
+<meta name="twitter:description" content="选择数据库：use db_name; 显示当前数据库下的所有数据表（文件）：show tables; 创建数据表：create table table_name(列名1 列的类型 列的属性，列名2 列的类型 列的属性……）; 注：不能以数字开头 列的属性：     null | not null：该列是否为空     default default_value:该列的默认值         注：d">
 
 
 
@@ -332,13 +332,13 @@
 
       
         <h2 id="选择数据库："><a href="#选择数据库：" class="headerlink" title="选择数据库："></a>选择数据库：</h2><pre><code>use db_name;
-</code></pre><h2 id="显示当前数据库下的所有数据表（文件）"><a href="#显示当前数据库下的所有数据表（文件）" class="headerlink" title="显示当前数据库下的所有数据表（文件）"></a>显示当前数据库下的所有数据表（文件）</h2><pre><code>show tables;
+</code></pre><h2 id="显示当前数据库下的所有数据表（文件）："><a href="#显示当前数据库下的所有数据表（文件）：" class="headerlink" title="显示当前数据库下的所有数据表（文件）："></a>显示当前数据库下的所有数据表（文件）：</h2><pre><code>show tables;
 </code></pre><h2 id="创建数据表："><a href="#创建数据表：" class="headerlink" title="创建数据表："></a>创建数据表：</h2><pre><code>create table table_name(列名1 列的类型 列的属性，列名2 列的类型 列的属性……）;
 注：不能以数字开头
 列的属性：
     null | not null：该列是否为空
     default default_value:该列的默认值
-        default_value默认值可以是字符串，也可以是整型
+        注：default_value默认值可以是字符串，也可以是整型
     auto_increment：该列为自动增长型，或者自动编号，要求该列必须是整型，一个表只能有一个自动增长型
     primary key：主键，该列的指具有唯一性，且不能为空，一个表只能有一个主键
 
@@ -354,10 +354,10 @@
         content text null,  //新闻内容
         addate int(16) not null  //添加时间
     );
-</code></pre><h2 id="显示字段"><a href="#显示字段" class="headerlink" title="显示字段"></a>显示字段</h2><pre><code>describe table_name
-</code></pre><h2 id="删除数据表"><a href="#删除数据表" class="headerlink" title="删除数据表"></a>删除数据表</h2><pre><code>drop table [if exists] table_name;
+</code></pre><h2 id="显示字段："><a href="#显示字段：" class="headerlink" title="显示字段："></a>显示字段：</h2><pre><code>describe table_name
+</code></pre><h2 id="删除数据表："><a href="#删除数据表：" class="headerlink" title="删除数据表："></a>删除数据表：</h2><pre><code>drop table [if exists] table_name;
 例：drop table news;
-</code></pre><h2 id="修改数据表"><a href="#修改数据表" class="headerlink" title="修改数据表"></a>修改数据表</h2><pre><code>alter table
+</code></pre><h2 id="修改数据表："><a href="#修改数据表：" class="headerlink" title="修改数据表："></a>修改数据表：</h2><pre><code>alter table
 </code></pre>
       
     </div>
@@ -517,7 +517,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#选择数据库："><span class="nav-number">1.</span> <span class="nav-text">选择数据库：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#显示当前数据库下的所有数据表（文件）"><span class="nav-number">2.</span> <span class="nav-text">显示当前数据库下的所有数据表（文件）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建数据表："><span class="nav-number">3.</span> <span class="nav-text">创建数据表：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#显示字段"><span class="nav-number">4.</span> <span class="nav-text">显示字段</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#删除数据表"><span class="nav-number">5.</span> <span class="nav-text">删除数据表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改数据表"><span class="nav-number">6.</span> <span class="nav-text">修改数据表</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#选择数据库："><span class="nav-number">1.</span> <span class="nav-text">选择数据库：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#显示当前数据库下的所有数据表（文件）："><span class="nav-number">2.</span> <span class="nav-text">显示当前数据库下的所有数据表（文件）：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建数据表："><span class="nav-number">3.</span> <span class="nav-text">创建数据表：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#显示字段："><span class="nav-number">4.</span> <span class="nav-text">显示字段：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#删除数据表："><span class="nav-number">5.</span> <span class="nav-text">删除数据表：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改数据表："><span class="nav-number">6.</span> <span class="nav-text">修改数据表：</span></a></li></ol></div>
             
 
           </div>
