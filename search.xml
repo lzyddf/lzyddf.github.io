@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[PHP连接数据库]]></title>
+    <url>%2F2018%2F09%2F16%2FPHP%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93%2F</url>
+    <content type="text"><![CDATA[1、mysql_connect()·描述：PHP连接Mysql服务器 ·语法：resource $link = mysql_connect($hostname,$username,$password) ·参数： ·$hostname:域名或IP地址。也可以加端口号 ·$username:用户名，如：root ·$password:密码，如：root ·返回值：成功返回一个资源标识符，失败返回false ·例： 一、 $link = mysql_connect(&quot;localhost&quot;,&quot;root&quot;,&quot;root&quot;); 二、 $db_host = &quot;localhost&quot;; $db_user = &quot;root&quot;; $db_pwd = &quot;root&quot;; $link = mysql_connect($db_host,$db_user,$db_pwd); ·注：在函数前面加@,连接失败时不会显示错误信息，防止有用信息泄露 例：$link = @mysql_connect($db_host,$db_user,$db_pwd); 2、exit()·描述：输出一个提示信息，并停止脚本运行 ·语法：void exit([$msg]) ·参数：$msg是可选项，如果省略，只终止脚本运行 ·例：exit(&quot;PHP连接出错&quot;) 3、mysql_error()·描述：返回上一次Mysql执行失败时的文本错误信息，不会显示其他有用信息 ·语法：mysql_error()]]></content>
+      <categories>
+        <category>Mysql</category>
+      </categories>
+  </entry>
+  <entry>
     <title><![CDATA[SQL增删改查]]></title>
     <url>%2F2018%2F09%2F16%2FSQL%E5%A2%9E%E5%88%A0%E6%94%B9%E6%9F%A5%2F</url>
     <content type="text"><![CDATA[添加记录insert into table_name(字段1，字段2，字段3……) values(值1，值2，值3……) 例：insert into news(title,content,hits) values(&apos;title&apos;,&apos;content&apos;,100); 删除记录delete from table_name [where 条件] 注：where如果省略，将删除所有记录 例： delete from news; //删除所有记录 delete from news where id&gt;10; //删除id&gt;10所有记录 delete from news where id&gt;=10 and id!=20; delete from news where author=&apos;admin&apos; and id&lt;100; 修改记录update table_name set 字段1 = 新值1，字段2=新值2，…… [where 条件]; 注：where不能省略，如果省略，所列字段所有记录的值都会一样 例： update news set title =&apos;新标题&apos;,content=&apos;新内容&apos; where id=50; 查询记录select 字段列表/*(所有字段) from table_name [where 条件][order by 字段名 asc(升序)/desc(降序)][limit 限制输出] 例： select * from news where id&lt;50 limit 10,20; 注：输出从第11行开始，id小于50的20条记录]]></content>
