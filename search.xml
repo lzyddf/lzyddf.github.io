@@ -1,6 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[SQL增删改查]]></title>
+    <url>%2F2018%2F09%2F16%2FSQL%E5%A2%9E%E5%88%A0%E6%94%B9%E6%9F%A5%2F</url>
+    <content type="text"><![CDATA[添加记录insert into table_name(字段1，字段2，字段3……) values(值1，值2，值3……) 例：insert into news(title,content,hits) values(&apos;title&apos;,&apos;content&apos;,100); 删除记录delete from table_name [where 条件] 注：where如果省略，将删除所有记录 例： delete from news; //删除所有记录 delete from news where id&gt;10; //删除id&gt;10所有记录 delete from news where id&gt;=10 and id!=20; delete from news where author=&apos;admin&apos; and id&lt;100; 修改记录update table_name set 字段1 = 新值1，字段2=新值2，…… [where 条件]; 注：where不能省略，如果省略，所列字段所有记录的值都会一样 例： update news set title =&apos;新标题&apos;,content=&apos;新内容&apos; where id=50; 查询记录select 字段列表/*(所有字段) from table_name [where 条件][order by 字段名 asc(升序)/desc(降序)][limit 限制输出] 例： select * from news where id&lt;50 limit 10,20; 注：输出从第11行开始，id小于50的20条记录]]></content>
+      <categories>
+        <category>Mysql</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[数据类型]]></title>
+    <url>%2F2018%2F09%2F16%2F%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%2F</url>
+    <content type="text"><![CDATA[整型tinyint 最小型整数 0~255/-128~127 1个字节 smalint 小型整数 0~65535 2个字节 mediumint 中型整数 0~1677万 3个字节 int 一般整数 0~21亿 4个字节 bigint 最大整数 0~42亿 8个字节 浮点型float(M,D) 单精度(精确到小数后7位) double(M,D) 双精度(精确到小数后15位) 注：其中，M代表长度,D代表小数位数 日期和时间data 日期型 格式：&quot;YYYY-mm-dd&quot; time 时间型 格式：&quot;00:00:00&quot; 字符型char(M) 0~255 固定长度字符串 如：身份证、手机号、邮编等 varchar(M) 0~65535 可变长字符串 如：新闻标题、家庭地址等 文本型tinytext 0~255 小型文本 text 0~1670万 中型文本 longtext 0~42亿 大型文本]]></content>
+      <categories>
+        <category>Mysql</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[数据表操作]]></title>
+    <url>%2F2018%2F09%2F16%2F%E6%95%B0%E6%8D%AE%E8%A1%A8%E6%93%8D%E4%BD%9C%2F</url>
+    <content type="text"><![CDATA[选择数据库：use db_name; 显示当前数据库下的所有数据表（文件）show tables; 创建数据表：create table table_name(列名1 列的类型 列的属性，列名2 列的类型 列的属性……）; 注：不能以数字开头 列的属性： null | not null：该列是否为空 default default_value:该列的默认值 default_value默认值可以是字符串，也可以是整型 auto_increment：该列为自动增长型，或者自动编号，要求该列必须是整型，一个表只能有一个自动增长型 primary key：主键，该列的指具有唯一性，且不能为空，一个表只能有一个主键 id字段属性必须有：not null auto _increment primary key 例：创建一个新闻(news)数据表 create table news( id int not null auto_increment primary key, //编号 title varchar(100) not null, //标题 author varchar(20) not null, //作者 source varchar(30) not null, //来源 hits int(5) not null default 0, //点击次数 is_ppt tinyint(1) not null default 0, //是否是幻灯新闻 content text null, //新闻内容 addate int(16) not null //添加时间 ); 显示字段describe table_name 删除数据表drop table [if exists] table_name; 例：drop table news; 修改数据表alter table]]></content>
+      <categories>
+        <category>Mysql</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[数据库操作]]></title>
+    <url>%2F2018%2F09%2F16%2F%E6%95%B0%E6%8D%AE%E5%BA%93%E6%93%8D%E4%BD%9C%2F</url>
+    <content type="text"><![CDATA[创建数据库：create database [if not exists] db_name [charset utf8]; 查看数据库默认字符集：show create database db_name; 删除数据库drop database [if exists] db_name; 通过命令来修改数据库的字符集：例：alter database db_name default character set utf8; 关于导入sql文件注：导入sql文件时，要先创建数据库，然后再导入数据，且创建的数据库的字符集必须是utf8，否则会乱码]]></content>
+      <categories>
+        <category>Mysql</category>
+      </categories>
+  </entry>
+  <entry>
     <title><![CDATA[C语言空函数转汇编]]></title>
     <url>%2F2018%2F09%2F11%2FC%E8%AF%AD%E8%A8%80%E7%A9%BA%E5%87%BD%E6%95%B0%E8%BD%AC%E6%B1%87%E7%BC%96%2F</url>
     <content type="text"><![CDATA[//保存原来栈底 push ebp //提升堆栈 mov ebp,esp sub esp,0x40 //保存现场 push esi push edi push ebx //填充缓存区 mov eax,0xCCCCCCCC mov ecx,0x10 lea edi,dword ptr ds:[ebp-0x40] rep stosd //该函数真正要执行的功能 ...... //恢复现场 pop ebx pop edi pop esi //恢复堆栈 mov esp,ebp pop ebp //返回 ret]]></content>

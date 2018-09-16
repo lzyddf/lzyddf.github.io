@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="1、下载文件进入官网http://pinyin.sogou.com/linux，下载自己对应的系统位数安装包 2、打开终端，进入下载目录$ cd Downloads/  (以实际目录为准) 3、安装$ sudo dpkg -i sougoupinyin…….deb (以你下载的实际安装包名字为标准) 4、打开Language Support如果报错，就从终端输入该命令 $ sudo apt-get">
+<meta name="description" content="选择数据库：use db_name; 显示当前数据库下的所有数据表（文件）show tables; 创建数据表：create table table_name(列名1 列的类型 列的属性，列名2 列的类型 列的属性……）; 注：不能以数字开头 列的属性：     null | not null：该列是否为空     default default_value:该列的默认值         defa">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ubuntu安装搜狗拼音输入法">
-<meta property="og:url" content="http://yoursite.com/2018/05/19/ubuntu安装搜狗拼音输入法/index.html">
+<meta property="og:title" content="数据表操作">
+<meta property="og:url" content="http://yoursite.com/2018/09/16/数据表操作/index.html">
 <meta property="og:site_name" content="Lzyddf&#39;s Hexo">
-<meta property="og:description" content="1、下载文件进入官网http://pinyin.sogou.com/linux，下载自己对应的系统位数安装包 2、打开终端，进入下载目录$ cd Downloads/  (以实际目录为准) 3、安装$ sudo dpkg -i sougoupinyin…….deb (以你下载的实际安装包名字为标准) 4、打开Language Support如果报错，就从终端输入该命令 $ sudo apt-get">
+<meta property="og:description" content="选择数据库：use db_name; 显示当前数据库下的所有数据表（文件）show tables; 创建数据表：create table table_name(列名1 列的类型 列的属性，列名2 列的类型 列的属性……）; 注：不能以数字开头 列的属性：     null | not null：该列是否为空     default default_value:该列的默认值         defa">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-20T13:54:48.303Z">
+<meta property="og:updated_time" content="2018-09-16T04:42:41.519Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ubuntu安装搜狗拼音输入法">
-<meta name="twitter:description" content="1、下载文件进入官网http://pinyin.sogou.com/linux，下载自己对应的系统位数安装包 2、打开终端，进入下载目录$ cd Downloads/  (以实际目录为准) 3、安装$ sudo dpkg -i sougoupinyin…….deb (以你下载的实际安装包名字为标准) 4、打开Language Support如果报错，就从终端输入该命令 $ sudo apt-get">
+<meta name="twitter:title" content="数据表操作">
+<meta name="twitter:description" content="选择数据库：use db_name; 显示当前数据库下的所有数据表（文件）show tables; 创建数据表：create table table_name(列名1 列的类型 列的属性，列名2 列的类型 列的属性……）; 注：不能以数字开头 列的属性：     null | not null：该列是否为空     default default_value:该列的默认值         defa">
 
 
 
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/05/19/ubuntu安装搜狗拼音输入法/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/09/16/数据表操作/"/>
 
 
 
 
 
-  <title>ubuntu安装搜狗拼音输入法 | Lzyddf's Hexo</title>
+  <title>数据表操作 | Lzyddf's Hexo</title>
   
 
 
@@ -242,7 +242,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/19/ubuntu安装搜狗拼音输入法/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/16/数据表操作/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="John Doe">
@@ -259,7 +259,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">ubuntu安装搜狗拼音输入法</h1>
+          <h1 class="post-title" itemprop="name headline">数据表操作</h1>
         
 
         <div class="post-meta">
@@ -271,8 +271,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-19T11:25:49+08:00">
-                2018-05-19
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-16T12:40:30+08:00">
+                2018-09-16
               </time>
             
 
@@ -294,8 +294,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Ubuntu/" itemprop="url" rel="index">
-                    <span itemprop="name">Ubuntu</span>
+                  <a href="/categories/Mysql/" itemprop="url" rel="index">
+                    <span itemprop="name">Mysql</span>
                   </a>
                 </span>
 
@@ -331,17 +331,34 @@
       
 
       
-        <h2 id="1、下载文件"><a href="#1、下载文件" class="headerlink" title="1、下载文件"></a>1、下载文件</h2><pre><code>进入官网http://pinyin.sogou.com/linux，下载自己对应的系统位数安装包
-</code></pre><h2 id="2、打开终端，进入下载目录"><a href="#2、打开终端，进入下载目录" class="headerlink" title="2、打开终端，进入下载目录"></a>2、打开终端，进入下载目录</h2><pre><code>$ cd Downloads/  (以实际目录为准)
-</code></pre><h2 id="3、安装"><a href="#3、安装" class="headerlink" title="3、安装"></a>3、安装</h2><pre><code>$ sudo dpkg -i sougoupinyin…….deb (以你下载的实际安装包名字为标准)
-</code></pre><h2 id="4、打开Language-Support"><a href="#4、打开Language-Support" class="headerlink" title="4、打开Language Support"></a>4、打开Language Support</h2><pre><code>如果报错，就从终端输入该命令
-$ sudo apt-get install -f 
-成功打开Language Support后，将IBus改为fcitx，然后重启电脑
-</code></pre><h2 id="5、重启后，屏幕右上角会出现键盘图标"><a href="#5、重启后，屏幕右上角会出现键盘图标" class="headerlink" title="5、重启后，屏幕右上角会出现键盘图标"></a>5、重启后，屏幕右上角会出现键盘图标</h2><pre><code>点击键盘图标，选择Configure Current Input Method
-点左下角的 +
-取消勾选Only Show Current Language
-找到sougou pinyin (一般在最底下)，点ok
-</code></pre><h2 id="6、使用ctrl-空格，切换到搜狗拼音输入法，就可以开始使用啦"><a href="#6、使用ctrl-空格，切换到搜狗拼音输入法，就可以开始使用啦" class="headerlink" title="6、使用ctrl+空格，切换到搜狗拼音输入法，就可以开始使用啦"></a>6、使用ctrl+空格，切换到搜狗拼音输入法，就可以开始使用啦</h2>
+        <h2 id="选择数据库："><a href="#选择数据库：" class="headerlink" title="选择数据库："></a>选择数据库：</h2><pre><code>use db_name;
+</code></pre><h2 id="显示当前数据库下的所有数据表（文件）"><a href="#显示当前数据库下的所有数据表（文件）" class="headerlink" title="显示当前数据库下的所有数据表（文件）"></a>显示当前数据库下的所有数据表（文件）</h2><pre><code>show tables;
+</code></pre><h2 id="创建数据表："><a href="#创建数据表：" class="headerlink" title="创建数据表："></a>创建数据表：</h2><pre><code>create table table_name(列名1 列的类型 列的属性，列名2 列的类型 列的属性……）;
+注：不能以数字开头
+列的属性：
+    null | not null：该列是否为空
+    default default_value:该列的默认值
+        default_value默认值可以是字符串，也可以是整型
+    auto_increment：该列为自动增长型，或者自动编号，要求该列必须是整型，一个表只能有一个自动增长型
+    primary key：主键，该列的指具有唯一性，且不能为空，一个表只能有一个主键
+
+    id字段属性必须有：not null auto _increment primary key
+例：创建一个新闻(news)数据表
+    create table news(
+        id int not null auto_increment primary key, //编号
+        title varchar(100) not null,  //标题
+        author varchar(20) not null,  //作者
+        source varchar(30) not null,  //来源
+        hits int(5) not null default 0,  //点击次数
+        is_ppt tinyint(1) not null default 0,  //是否是幻灯新闻
+        content text null,  //新闻内容
+        addate int(16) not null  //添加时间
+    );
+</code></pre><h2 id="显示字段"><a href="#显示字段" class="headerlink" title="显示字段"></a>显示字段</h2><pre><code>describe table_name
+</code></pre><h2 id="删除数据表"><a href="#删除数据表" class="headerlink" title="删除数据表"></a>删除数据表</h2><pre><code>drop table [if exists] table_name;
+例：drop table news;
+</code></pre><h2 id="修改数据表"><a href="#修改数据表" class="headerlink" title="修改数据表"></a>修改数据表</h2><pre><code>alter table
+</code></pre>
       
     </div>
     
@@ -365,8 +382,8 @@ $ sudo apt-get install -f
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/05/19/hexo常用命令笔记/" rel="next" title="hexo常用命令笔记">
-                <i class="fa fa-chevron-left"></i> hexo常用命令笔记
+              <a href="/2018/09/16/数据库操作/" rel="next" title="数据库操作">
+                <i class="fa fa-chevron-left"></i> 数据库操作
               </a>
             
           </div>
@@ -375,8 +392,8 @@ $ sudo apt-get install -f
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/05/19/ubuntu安装VMware-Tools/" rel="prev" title="ubuntu安装VMware-Tools">
-                ubuntu安装VMware-Tools <i class="fa fa-chevron-right"></i>
+              <a href="/2018/09/16/数据类型/" rel="prev" title="数据类型">
+                数据类型 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -500,7 +517,7 @@ $ sudo apt-get install -f
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1、下载文件"><span class="nav-number">1.</span> <span class="nav-text">1、下载文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2、打开终端，进入下载目录"><span class="nav-number">2.</span> <span class="nav-text">2、打开终端，进入下载目录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3、安装"><span class="nav-number">3.</span> <span class="nav-text">3、安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4、打开Language-Support"><span class="nav-number">4.</span> <span class="nav-text">4、打开Language Support</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5、重启后，屏幕右上角会出现键盘图标"><span class="nav-number">5.</span> <span class="nav-text">5、重启后，屏幕右上角会出现键盘图标</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6、使用ctrl-空格，切换到搜狗拼音输入法，就可以开始使用啦"><span class="nav-number">6.</span> <span class="nav-text">6、使用ctrl+空格，切换到搜狗拼音输入法，就可以开始使用啦</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#选择数据库："><span class="nav-number">1.</span> <span class="nav-text">选择数据库：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#显示当前数据库下的所有数据表（文件）"><span class="nav-number">2.</span> <span class="nav-text">显示当前数据库下的所有数据表（文件）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建数据表："><span class="nav-number">3.</span> <span class="nav-text">创建数据表：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#显示字段"><span class="nav-number">4.</span> <span class="nav-text">显示字段</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#删除数据表"><span class="nav-number">5.</span> <span class="nav-text">删除数据表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改数据表"><span class="nav-number">6.</span> <span class="nav-text">修改数据表</span></a></li></ol></div>
             
 
           </div>
