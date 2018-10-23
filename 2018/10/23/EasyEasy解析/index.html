@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="D打开右键-中文搜索引擎-只能搜索，找到error，双击跟踪，上拉，找到入口点（push ebp）,下断点 2、第一次加密f8单步调试，0037140E处有个函数，跟随进去，发现里面有两个循环  1、计算用户名长度，作为循环变量  00371717  |&amp;gt; /8B55 F0       /mov edx,[local.4] 0037171A  |. |8A02          |mov a">
+<meta name="description" content="OD打开右键-中文搜索引擎-智能搜索，找到error，双击跟踪，上拉，找到入口点（push ebp）,下断点 2、第一次加密f8单步调试，0037140E处有个函数，跟随进去，发现里面有两个循环 1、计算用户名长度，作为循环变量  00371717  |&amp;gt; /8B55 F0       /mov edx,[local.4] 0037171A  |. |8A02          |mov a">
 <meta property="og:type" content="article">
 <meta property="og:title" content="EasyEasy解析">
 <meta property="og:url" content="http://yoursite.com/2018/10/23/EasyEasy解析/index.html">
 <meta property="og:site_name" content="Lzyddf&#39;s Hexo">
-<meta property="og:description" content="D打开右键-中文搜索引擎-只能搜索，找到error，双击跟踪，上拉，找到入口点（push ebp）,下断点 2、第一次加密f8单步调试，0037140E处有个函数，跟随进去，发现里面有两个循环  1、计算用户名长度，作为循环变量  00371717  |&amp;gt; /8B55 F0       /mov edx,[local.4] 0037171A  |. |8A02          |mov a">
+<meta property="og:description" content="OD打开右键-中文搜索引擎-智能搜索，找到error，双击跟踪，上拉，找到入口点（push ebp）,下断点 2、第一次加密f8单步调试，0037140E处有个函数，跟随进去，发现里面有两个循环 1、计算用户名长度，作为循环变量  00371717  |&amp;gt; /8B55 F0       /mov edx,[local.4] 0037171A  |. |8A02          |mov a">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-23T10:15:26.682Z">
+<meta property="og:updated_time" content="2018-10-23T10:20:50.343Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="EasyEasy解析">
-<meta name="twitter:description" content="D打开右键-中文搜索引擎-只能搜索，找到error，双击跟踪，上拉，找到入口点（push ebp）,下断点 2、第一次加密f8单步调试，0037140E处有个函数，跟随进去，发现里面有两个循环  1、计算用户名长度，作为循环变量  00371717  |&amp;gt; /8B55 F0       /mov edx,[local.4] 0037171A  |. |8A02          |mov a">
+<meta name="twitter:description" content="OD打开右键-中文搜索引擎-智能搜索，找到error，双击跟踪，上拉，找到入口点（push ebp）,下断点 2、第一次加密f8单步调试，0037140E处有个函数，跟随进去，发现里面有两个循环 1、计算用户名长度，作为循环变量  00371717  |&amp;gt; /8B55 F0       /mov edx,[local.4] 0037171A  |. |8A02          |mov a">
 
 
 
@@ -331,10 +331,9 @@
       
 
       
-        <h2 id="D打开"><a href="#D打开" class="headerlink" title="D打开"></a>D打开</h2><pre><code>右键-中文搜索引擎-只能搜索，找到error，双击跟踪，上拉，找到入口点（push ebp）,下断点
-</code></pre><h2 id="2、第一次加密"><a href="#2、第一次加密" class="headerlink" title="2、第一次加密"></a>2、第一次加密</h2><pre><code>f8单步调试，0037140E处有个函数，跟随进去，发现里面有两个循环
-
-1、计算用户名长度，作为循环变量
+        <h2 id="OD打开"><a href="#OD打开" class="headerlink" title="OD打开"></a>OD打开</h2><pre><code>右键-中文搜索引擎-智能搜索，找到error，双击跟踪，上拉，找到入口点（push ebp）,下断点
+</code></pre><h2 id="2、第一次加密"><a href="#2、第一次加密" class="headerlink" title="2、第一次加密"></a>2、第一次加密</h2><p>f8单步调试，0037140E处有个函数，跟随进去，发现里面有两个循环</p>
+<pre><code>1、计算用户名长度，作为循环变量
 
 00371717  |&gt; /8B55 F0       /mov edx,[local.4]
 0037171A  |. |8A02          |mov al,byte ptr ds:[edx]
@@ -476,9 +475,8 @@
 003718DA  |. |8955 F8       |mov [local.2],edx
 003718DD  |. |EB 05         |jmp short EasyEasy.003718E4
 003718DF  |&gt;^\E9 56FEFFFF   \jmp EasyEasy.0037173A
-</code></pre><h2 id="3、第二次加密"><a href="#3、第二次加密" class="headerlink" title="3、第二次加密"></a>3、第二次加密</h2><pre><code>从call中出来，发现下面定义了一堆字符，往下还有一个循环，是第二次加密
-
-003715F6  |&gt; /8B85 50FFFFFF /mov eax,[local.44]                      ;  local.44为循环变量
+</code></pre><h2 id="3、第二次加密"><a href="#3、第二次加密" class="headerlink" title="3、第二次加密"></a>3、第二次加密</h2><p>从call中出来，发现下面定义了一堆字符，往下还有一个循环，是第二次加密</p>
+<pre><code>003715F6  |&gt; /8B85 50FFFFFF /mov eax,[local.44]                      ;  local.44为循环变量
 003715FC  |. |83C0 01       |add eax,0x1
 003715FF  |. |8985 50FFFFFF |mov [local.44],eax
 00371605  |&gt; |83BD 50FFFFFF&gt; cmp [local.44],0x20
@@ -533,9 +531,8 @@
 003716D5  |.  6A 00         push 0x0                                 ; |hOwner = NULL
 003716D7  |.  FF15 D0303700 call dword ptr ds:[&lt;&amp;USER32.MessageBoxA&gt;&gt;; \MessageBoxA
 </code></pre><p>上面的call EasyEasy.00371900会改变eax的值，跟进去看看</p>
-<h2 id="5、结果比较"><a href="#5、结果比较" class="headerlink" title="5、结果比较"></a>5、结果比较</h2><pre><code>出现了第三个循环，是用来与正确flag得出的结果进行比较用的
-
-0037199D  |&gt; /8B45 FC       /mov eax,[local.1]
+<h2 id="5、结果比较"><a href="#5、结果比较" class="headerlink" title="5、结果比较"></a>5、结果比较</h2><p>出现了第三个循环，是用来与正确flag得出的结果进行比较用的</p>
+<pre><code>0037199D  |&gt; /8B45 FC       /mov eax,[local.1]
 003719A0  |. |83C0 01       |add eax,0x1
 003719A3  |. |8945 FC       |mov [local.1],eax
 003719A6  |&gt; |837D FC 20     cmp [local.1],0x20
@@ -1005,7 +1002,7 @@ int main(){
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#D打开"><span class="nav-number">1.</span> <span class="nav-text">D打开</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2、第一次加密"><span class="nav-number">2.</span> <span class="nav-text">2、第一次加密</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3、第二次加密"><span class="nav-number">3.</span> <span class="nav-text">3、第二次加密</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4、关键跳转"><span class="nav-number">4.</span> <span class="nav-text">4、关键跳转</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5、结果比较"><span class="nav-number">5.</span> <span class="nav-text">5、结果比较</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6、将前两个加密算法写成c语言"><span class="nav-number">6.</span> <span class="nav-text">6、将前两个加密算法写成c语言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7、逆算法"><span class="nav-number">7.</span> <span class="nav-text">7、逆算法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8、对第一个循环进行爆破"><span class="nav-number">8.</span> <span class="nav-text">8、对第一个循环进行爆破</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#OD打开"><span class="nav-number">1.</span> <span class="nav-text">OD打开</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2、第一次加密"><span class="nav-number">2.</span> <span class="nav-text">2、第一次加密</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3、第二次加密"><span class="nav-number">3.</span> <span class="nav-text">3、第二次加密</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4、关键跳转"><span class="nav-number">4.</span> <span class="nav-text">4、关键跳转</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5、结果比较"><span class="nav-number">5.</span> <span class="nav-text">5、结果比较</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6、将前两个加密算法写成c语言"><span class="nav-number">6.</span> <span class="nav-text">6、将前两个加密算法写成c语言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7、逆算法"><span class="nav-number">7.</span> <span class="nav-text">7、逆算法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8、对第一个循环进行爆破"><span class="nav-number">8.</span> <span class="nav-text">8、对第一个循环进行爆破</span></a></li></ol></div>
             
 
           </div>
