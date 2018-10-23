@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="OD打开右键-中文搜索引擎-智能搜索，找到error，双击跟踪，上拉，找到入口点（push ebp）,下断点 2、第一次加密f8单步调试，0037140E处有个函数，跟随进去，发现里面有两个循环 1、计算用户名长度，作为循环变量  00371717  |&amp;gt; /8B55 F0       /mov edx,[local.4] 0037171A  |. |8A02          |mov a">
+<meta name="description" content="OD打开右键-中文搜索引擎-智能搜索，找到error，双击跟踪，上拉，找到入口点（push ebp）,下断点 2、第一次加密f8单步调试，0037140E处有个函数，跟随进去，发现里面有两个循环 1、计算用户名长度，作为循环变量用户名长度固定为22位    00371717  |&amp;gt; /8B55 F0       /mov edx,[local.4]    0037171A  |. |8A02">
 <meta property="og:type" content="article">
 <meta property="og:title" content="EasyEasy解析">
 <meta property="og:url" content="http://yoursite.com/2018/10/23/EasyEasy解析/index.html">
 <meta property="og:site_name" content="Lzyddf&#39;s Hexo">
-<meta property="og:description" content="OD打开右键-中文搜索引擎-智能搜索，找到error，双击跟踪，上拉，找到入口点（push ebp）,下断点 2、第一次加密f8单步调试，0037140E处有个函数，跟随进去，发现里面有两个循环 1、计算用户名长度，作为循环变量  00371717  |&amp;gt; /8B55 F0       /mov edx,[local.4] 0037171A  |. |8A02          |mov a">
+<meta property="og:description" content="OD打开右键-中文搜索引擎-智能搜索，找到error，双击跟踪，上拉，找到入口点（push ebp）,下断点 2、第一次加密f8单步调试，0037140E处有个函数，跟随进去，发现里面有两个循环 1、计算用户名长度，作为循环变量用户名长度固定为22位    00371717  |&amp;gt; /8B55 F0       /mov edx,[local.4]    0037171A  |. |8A02">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-23T10:20:50.343Z">
+<meta property="og:updated_time" content="2018-10-23T10:23:39.322Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="EasyEasy解析">
-<meta name="twitter:description" content="OD打开右键-中文搜索引擎-智能搜索，找到error，双击跟踪，上拉，找到入口点（push ebp）,下断点 2、第一次加密f8单步调试，0037140E处有个函数，跟随进去，发现里面有两个循环 1、计算用户名长度，作为循环变量  00371717  |&amp;gt; /8B55 F0       /mov edx,[local.4] 0037171A  |. |8A02          |mov a">
+<meta name="twitter:description" content="OD打开右键-中文搜索引擎-智能搜索，找到error，双击跟踪，上拉，找到入口点（push ebp）,下断点 2、第一次加密f8单步调试，0037140E处有个函数，跟随进去，发现里面有两个循环 1、计算用户名长度，作为循环变量用户名长度固定为22位    00371717  |&amp;gt; /8B55 F0       /mov edx,[local.4]    0037171A  |. |8A02">
 
 
 
@@ -333,15 +333,7 @@
       
         <h2 id="OD打开"><a href="#OD打开" class="headerlink" title="OD打开"></a>OD打开</h2><pre><code>右键-中文搜索引擎-智能搜索，找到error，双击跟踪，上拉，找到入口点（push ebp）,下断点
 </code></pre><h2 id="2、第一次加密"><a href="#2、第一次加密" class="headerlink" title="2、第一次加密"></a>2、第一次加密</h2><p>f8单步调试，0037140E处有个函数，跟随进去，发现里面有两个循环</p>
-<pre><code>1、计算用户名长度，作为循环变量
-
-00371717  |&gt; /8B55 F0       /mov edx,[local.4]
-0037171A  |. |8A02          |mov al,byte ptr ds:[edx]
-0037171C  |. |8845 FE       |mov byte ptr ss:[ebp-0x2],al
-0037171F  |. |8345 F0 01    |add [local.4],0x1
-00371723  |. |807D FE 00    |cmp byte ptr ss:[ebp-0x2],0x0
-00371727  |.^\75 EE         \jnz short EasyEasy.00371717
-</code></pre><p>   2、将用户名进行第一次加密</p>
+<p>1、计算用户名长度，作为循环变量<br>用户名长度固定为22位<br>    00371717  |&gt; /8B55 F0       /mov edx,[local.4]<br>    0037171A  |. |8A02          |mov al,byte ptr ds:[edx]<br>    0037171C  |. |8845 FE       |mov byte ptr ss:[ebp-0x2],al<br>    0037171F  |. |8345 F0 01    |add [local.4],0x1<br>    00371723  |. |807D FE 00    |cmp byte ptr ss:[ebp-0x2],0x0<br>    00371727  |.^\75 EE         \jnz short EasyEasy.00371717<br>2、将用户名进行第一次加密</p>
 <pre><code>0037173A  |&gt; /8B45 F4       /mov eax,[local.3]                       ;  EasyEasy.00371110
 0037173D  |. |83C0 03       |add eax,0x3                             ;  可以理解为用户名长度每次从左向右减少3位
 00371740  |. |8945 F4       |mov [local.3],eax
