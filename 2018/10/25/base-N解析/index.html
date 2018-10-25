@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="Lzyddf&#39;s Hexo">
 <meta property="og:description" content="1、找到入口用OD打开，右键-中文搜索引擎-智能搜索，找到字符串”please input your flag:”，双击跟踪，往上找入口点（push ebp）,下断点 下面是整个程序的核心执行过程01051310  /$  55            push ebp                                 ;  入口 01051311  |.  8BEC">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-25T13:51:17.250Z">
+<meta property="og:updated_time" content="2018-10-25T13:53:46.989Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="base-N解析">
 <meta name="twitter:description" content="1、找到入口用OD打开，右键-中文搜索引擎-智能搜索，找到字符串”please input your flag:”，双击跟踪，往上找入口点（push ebp）,下断点 下面是整个程序的核心执行过程01051310  /$  55            push ebp                                 ;  入口 01051311  |.  8BEC">
@@ -883,7 +883,7 @@ int main(){
     system(&quot;pause&quot;);
     return 0;
 }
-</code></pre><p>运行，输出结果：9s27r4np499spoqs3prop7p47nsq1992<br>尝试输入给程序，单步调试，发现在进行最终比较的时候，字符串变成了：<br>9f27e4ac499fcbdf3cebc7c47afd1992<br>有了之前的经验，想必这也是rot-13，我们把这个输入<br>却依然弹出错误框，排查是否有bug或原因<br>稍微思考了下，想起调试爆破的时候，有时候用户名往上累加好几位，输出的结果都一样<br>这时候大概有数了，是在最后四位等于1992的时候，最先出现正确结果，爆破的循环就自动结束了，<br>我们把最后一位再往上累加试试看，<br>果然,运气不错，最后四位改成1993的时候，弹出提示框:Congratulations!!!</p>
+</code></pre><p>运行，输出结果：9s27r4np499spoqs3prop7p47nsq1992<br>尝试输入给程序，单步调试，发现在进行最终比较的时候，字符串变成了：<br>9f27e4ac499fcbdf3cebc7c47afd1992<br>有了之前的经验，想必这也是rot-13，我们把这个输入<br>却依然弹出错误框，排查是否有bug或原因<br>稍微思考了下，想起调试爆破的时候，有时候用户名往上累加好几位，输出的结果都一样<br>这时候大概有数了，是在最后四位等于1992的时候，最先出现正确结果，爆破的循环就自动结束了，<br>我们把最后一位再往上累加试试看，<br>果然，运气不错，最后四位改成1993的时候，弹出提示框:Congratulations!!!</p>
 
       
     </div>
