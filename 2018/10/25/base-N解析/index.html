@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="1、找到入口用OD打开，右键-中文搜索引擎-智能搜索，找到字符串”please input your flag:”，双击跟踪，往上找入口点（push ebp）,下断点下面是整个程序的核心执行过程    01051310  /$  55            push ebp                                 ;  入口    01051311  |.  8BEC">
+<meta name="description" content="1、找到入口用OD打开，右键-中文搜索引擎-智能搜索，找到字符串”please input your flag:”，双击跟踪，往上找入口点（push ebp）,下断点 下面是整个程序的核心执行过程01051310  /$  55            push ebp                                 ;  入口 01051311  |.  8BEC">
 <meta property="og:type" content="article">
 <meta property="og:title" content="base-N解析">
 <meta property="og:url" content="http://yoursite.com/2018/10/25/base-N解析/index.html">
 <meta property="og:site_name" content="Lzyddf&#39;s Hexo">
-<meta property="og:description" content="1、找到入口用OD打开，右键-中文搜索引擎-智能搜索，找到字符串”please input your flag:”，双击跟踪，往上找入口点（push ebp）,下断点下面是整个程序的核心执行过程    01051310  /$  55            push ebp                                 ;  入口    01051311  |.  8BEC">
+<meta property="og:description" content="1、找到入口用OD打开，右键-中文搜索引擎-智能搜索，找到字符串”please input your flag:”，双击跟踪，往上找入口点（push ebp）,下断点 下面是整个程序的核心执行过程01051310  /$  55            push ebp                                 ;  入口 01051311  |.  8BEC">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-25T13:08:13.665Z">
+<meta property="og:updated_time" content="2018-10-25T13:11:19.924Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="base-N解析">
-<meta name="twitter:description" content="1、找到入口用OD打开，右键-中文搜索引擎-智能搜索，找到字符串”please input your flag:”，双击跟踪，往上找入口点（push ebp）,下断点下面是整个程序的核心执行过程    01051310  /$  55            push ebp                                 ;  入口    01051311  |.  8BEC">
+<meta name="twitter:description" content="1、找到入口用OD打开，右键-中文搜索引擎-智能搜索，找到字符串”please input your flag:”，双击跟踪，往上找入口点（push ebp）,下断点 下面是整个程序的核心执行过程01051310  /$  55            push ebp                                 ;  入口 01051311  |.  8BEC">
 
 
 
@@ -331,8 +331,119 @@
       
 
       
-        <h2 id="1、找到入口"><a href="#1、找到入口" class="headerlink" title="1、找到入口"></a>1、找到入口</h2><p>用OD打开，右键-中文搜索引擎-智能搜索，找到字符串”please input your flag:”，双击跟踪，往上找入口点（push ebp）,下断点<br>下面是整个程序的核心执行过程<br>    01051310  /$  55            push ebp                                 ;  入口<br>    01051311  |.  8BEC          mov ebp,esp<br>    01051313  |.  83E4 F8       and esp,0xFFFFFFF8<br>    01051316  |.  51            push ecx<br>    01051317  |.  8B0D 70300501 mov ecx,dword ptr ds:[&lt;&amp;MSVCP140.std::co&gt;<br>    0105131D  |.  BA DC310501   mov edx,第四题.010531DC                  ;  please input your flag:<br>    01051322  |.  53            push ebx<br>    01051323  |.  56            push esi<br>    01051324  |.  57            push edi<br>    01051325  |.  E8 36020000   call 第四题.01051560<br>    0105132A  |.  8B0D 64300501 mov ecx,dword ptr ds:[&lt;&amp;MSVCP140.std::ci&gt;<br>    01051330  |.  E8 6B040000   call 第四题.010517A0<br>    01051335  |.  B9 18500501   mov ecx,第四题.01055018<br>    0105133A  |.  8D51 01       lea edx,dword ptr ds:[ecx+0x1]<br>    0105133D  |.  0f1f00        nop dword ptr ds:[eax]<br>    01051340  |&gt;  8A01          /mov al,byte ptr ds:[ecx]                ;  这个循环用来计算长度<br>    01051342  |.  41            |inc ecx<br>    01051343  |.  84C0          |test al,al<br>    01051345  |.^ 75 F9         \jnz short 第四题.01051340<br>    01051347  |.  2BCA          sub ecx,edx<br>    01051349  |.  83F9 0A       cmp ecx,0xA                              ; 这里是个坑<br>    0105134C  |.  7C 56         jl short 第四题.010513A4<br>    0105134E  |.  B9 18500501   mov ecx,第四题.01055018<br>    01051353  |.  E8 A8FDFFFF   call 第四题.01051100<br>    01051358  |.  B9 F4310501   mov ecx,第四题.010531F4                   ;  guvf_vf_n_snxr_synt<br>    0105135D  |.  B8 18500501   mov eax,第四题.01055018<br>    01051362  |&gt;  8A10          /mov dl,byte ptr ds:[eax]<br>    01051364  |.  3A11          |cmp dl,byte ptr ds:[ecx]<br>    01051366  |.  75 1A         |jnz short 第四题.01051382<br>    01051368  |.  84D2          |test dl,dl<br>    0105136A  |.  74 12         |je short 第四题.0105137E<br>    0105136C  |.  8A50 01       |mov dl,byte ptr ds:[eax+0x1]<br>    0105136F  |.  3A51 01       |cmp dl,byte ptr ds:[ecx+0x1]<br>    01051372  |.  75 0E         |jnz short 第四题.01051382<br>    01051374  |.  83C0 02       |add eax,0x2<br>    01051377  |.  83C1 02       |add ecx,0x2<br>    0105137A  |.  84D2          |test dl,dl<br>    0105137C  |.^ 75 E4         \jnz short 第四题.01051362<br>    0105137E  |&gt;  33C0          xor eax,eax<br>    01051380  |.  EB 05         jmp short 第四题.01051387<br>    01051382  |&gt;  1BC0          sbb eax,eax<br>    01051384  |.  83C8 01       or eax,0x1<br>    01051387  |&gt;  85C0          test eax,eax<br>    01051389  |.  75 19         jnz short 第四题.010513A4<br>    0105138B  |.  8B0D 70300501 mov ecx,dword ptr ds:[&lt;&amp;MSVCP140.std::co&gt;<br>    01051391  |.  BA 08320501   mov edx,第四题.01053208                   ;  try a little bit harder!\n<br>    01051396  |.  E8 C5010000   call 第四题.01051560<br>    0105139B  |.  33C0          xor eax,eax<br>    0105139D  |.  5F            pop edi<br>    0105139E  |.  5E            pop esi<br>    0105139F  |.  5B            pop ebx<br>    010513A0  |.  8BE5          mov esp,ebp<br>    010513A2  |.  5D            pop ebp<br>    010513A3  |.  C3            retn<br>    010513A4  |&gt;  E8 17FFFFFF   call 第四题.010512C0<br>    010513A9  |.  BE 18500501   mov esi,第四题.01055018<br>    010513AE  |.  8D4E 01       lea ecx,dword ptr ds:[esi+0x1]<br>    010513B1  |&gt;  8A06          /mov al,byte ptr ds:[esi]                ;  这也是计算长度<br>    010513B3  |.  46            |inc esi<br>    010513B4  |.  84C0          |test al,al<br>    010513B6  |.^ 75 F9         \jnz short 第四题.010513B1<br>    010513B8  |.  2BF1          sub esi,ecx<br>    010513BA  |.  33FF          xor edi,edi<br>    010513BC  |.  85F6          test esi,esi<br>    010513BE  |.  7E 22         jle short 第四题.010513E2<br>    010513C0  |.  BB A8500501   mov ebx,第四题.010550A8<br>    010513C5  |&gt;  8BD6          /mov edx,esi                             ;  这个循环是核心算法了<br>    010513C7  |.  8D8F 18500501 |lea ecx,dword ptr ds:[edi+0x1055018]<br>    010513CD  |.  53            |push ebx                                ; /Arg1 = 010550A8 ASCII “TRmqTaoi”<br>    010513CE  |.  2BD7          |sub edx,edi<br>    010513D0  |.  E8 9BFDFFFF   |call 第四题.01051170                    ; 核心算法就在里面，跟进去<br>    010513D5  |.  83C7 05       |add edi,0x5                             ;  出来后我们可以知道，每循环一次，<br>    010513D8  |.  83C4 04       |add esp,0x4                             ;  取5位输入，输出8个字符<br>    010513DB  |.  83C3 08       |add ebx,0x8<br>    010513DE  |.  3BFE          |cmp edi,esi<br>    010513E0  |.^ 7C E3         \jl short 第四题.010513C5<br>    010513E2  |&gt;  B9 24320501   mov ecx,第四题.01053224                   ;  usmgRa6FTekuNaomusmkN66eBZmkN7gcBN6kNaokammkPZwmuRmD====<br>    010513E7  |.  B8 A8500501   mov eax,第四题.010550A8                   ;  ↑用来比较的字符串<br>    010513EC  |.  0f1f40 00     nop dword ptr ds:[eax]<br>    010513F0  |&gt;  8A10          /mov dl,byte ptr ds:[eax]                ;  这个循环就是比较过程，有一位不对就会跳到失败<br>    010513F2  |.  3A11          |cmp dl,byte ptr ds:[ecx]<br>    010513F4  |.  75 1A         |jnz short 第四题.01051410<br>    010513F6  |.  84D2          |test dl,dl<br>    010513F8  |.  74 12         |je short 第四题.0105140C<br>    010513FA  |.  8A50 01       |mov dl,byte ptr ds:[eax+0x1]<br>    010513FD  |.  3A51 01       |cmp dl,byte ptr ds:[ecx+0x1]<br>    01051400  |.  75 0E         |jnz short 第四题.01051410<br>    01051402  |.  83C0 02       |add eax,0x2<br>    01051405  |.  83C1 02       |add ecx,0x2<br>    01051408  |.  84D2          |test dl,dl<br>    0105140A  |.^ 75 E4         \jnz short 第四题.010513F0<br>    0105140C  |&gt;  33C0          xor eax,eax<br>    0105140E  |.  EB 05         jmp short 第四题.01051415<br>    01051410  |&gt;  1BC0          sbb eax,eax<br>    01051412  |.  83C8 01       or eax,0x1<br>    01051415  |&gt;  8B0D 70300501 mov ecx,dword ptr ds:[&lt;&amp;MSVCP140.std::co&gt;<br>    0105141B  |.  BA 60320501   mov edx,第四题.01053260                     ;  Congratulations!!!\n<br>    01051420  |.  85C0          test eax,eax<br>    01051422  |.  74 05         je short 第四题.01051429                    ;  ；关键跳转<br>    01051424  |.  BA 74320501   mov edx,第四题.01053274                     ;  soooooooooorry\n<br>    01051429  |&gt;  E8 32010000   call 第四题.01051560<br>    0105142E  |.  68 84320501   push 第四题.01053284                        ; /pause<br>    01051433  |.  FF15 F8300501 call dword ptr ds:[&lt;&amp;api-ms-win-crt-runt&gt;; \system<br>    01051439  |.  83C4 04       add esp,0x4<br>    0105143C  |.  33C0          xor eax,eax<br>    0105143E  |.  5F            pop edi<br>    0105143F  |.  5E            pop esi<br>    01051440  |.  5B            pop ebx<br>    01051441  |.  8BE5          mov esp,ebp<br>    01051443  |.  5D            pop ebp<br>    01051444  .  C3            retn</p>
-<h2 id="2、简单分析"><a href="#2、简单分析" class="headerlink" title="2、简单分析"></a>2、简单分析</h2><pre><code>运行，f8单步调试，不久便遇到第一个跳转点
+        <h2 id="1、找到入口"><a href="#1、找到入口" class="headerlink" title="1、找到入口"></a>1、找到入口</h2><p>用OD打开，右键-中文搜索引擎-智能搜索，找到字符串”please input your flag:”，双击跟踪，往上找入口点（push ebp）,下断点</p>
+<h2 id="下面是整个程序的核心执行过程"><a href="#下面是整个程序的核心执行过程" class="headerlink" title="下面是整个程序的核心执行过程"></a>下面是整个程序的核心执行过程</h2><pre><code>01051310  /$  55            push ebp                                 ;  入口
+01051311  |.  8BEC          mov ebp,esp
+01051313  |.  83E4 F8       and esp,0xFFFFFFF8
+01051316  |.  51            push ecx
+01051317  |.  8B0D 70300501 mov ecx,dword ptr ds:[&lt;&amp;MSVCP140.std::co&gt;
+0105131D  |.  BA DC310501   mov edx,第四题.010531DC                  ;  please input your flag:
+01051322  |.  53            push ebx                                 
+01051323  |.  56            push esi
+01051324  |.  57            push edi
+01051325  |.  E8 36020000   call 第四题.01051560
+0105132A  |.  8B0D 64300501 mov ecx,dword ptr ds:[&lt;&amp;MSVCP140.std::ci&gt;
+01051330  |.  E8 6B040000   call 第四题.010517A0
+01051335  |.  B9 18500501   mov ecx,第四题.01055018                   
+0105133A  |.  8D51 01       lea edx,dword ptr ds:[ecx+0x1]
+0105133D  |.  0f1f00        nop dword ptr ds:[eax]
+01051340  |&gt;  8A01          /mov al,byte ptr ds:[ecx]                ;  这个循环用来计算长度
+01051342  |.  41            |inc ecx
+01051343  |.  84C0          |test al,al
+01051345  |.^ 75 F9         \jnz short 第四题.01051340
+01051347  |.  2BCA          sub ecx,edx                              
+01051349  |.  83F9 0A       cmp ecx,0xA                              ; 这里是个坑
+0105134C  |.  7C 56         jl short 第四题.010513A4                  
+0105134E  |.  B9 18500501   mov ecx,第四题.01055018
+01051353  |.  E8 A8FDFFFF   call 第四题.01051100
+01051358  |.  B9 F4310501   mov ecx,第四题.010531F4                   ;  guvf_vf_n_snxr_synt
+0105135D  |.  B8 18500501   mov eax,第四题.01055018
+01051362  |&gt;  8A10          /mov dl,byte ptr ds:[eax]
+01051364  |.  3A11          |cmp dl,byte ptr ds:[ecx]
+01051366  |.  75 1A         |jnz short 第四题.01051382
+01051368  |.  84D2          |test dl,dl
+0105136A  |.  74 12         |je short 第四题.0105137E
+0105136C  |.  8A50 01       |mov dl,byte ptr ds:[eax+0x1]
+0105136F  |.  3A51 01       |cmp dl,byte ptr ds:[ecx+0x1]
+01051372  |.  75 0E         |jnz short 第四题.01051382
+01051374  |.  83C0 02       |add eax,0x2
+01051377  |.  83C1 02       |add ecx,0x2
+0105137A  |.  84D2          |test dl,dl
+0105137C  |.^ 75 E4         \jnz short 第四题.01051362
+0105137E  |&gt;  33C0          xor eax,eax                              
+01051380  |.  EB 05         jmp short 第四题.01051387
+01051382  |&gt;  1BC0          sbb eax,eax                              
+01051384  |.  83C8 01       or eax,0x1
+01051387  |&gt;  85C0          test eax,eax                             
+01051389  |.  75 19         jnz short 第四题.010513A4
+0105138B  |.  8B0D 70300501 mov ecx,dword ptr ds:[&lt;&amp;MSVCP140.std::co&gt;
+01051391  |.  BA 08320501   mov edx,第四题.01053208                   ;  try a little bit harder!\n
+01051396  |.  E8 C5010000   call 第四题.01051560
+0105139B  |.  33C0          xor eax,eax                           
+0105139D  |.  5F            pop edi                              
+0105139E  |.  5E            pop esi                          
+0105139F  |.  5B            pop ebx                                  
+010513A0  |.  8BE5          mov esp,ebp
+010513A2  |.  5D            pop ebp                                  
+010513A3  |.  C3            retn
+010513A4  |&gt;  E8 17FFFFFF   call 第四题.010512C0
+010513A9  |.  BE 18500501   mov esi,第四题.01055018                  
+010513AE  |.  8D4E 01       lea ecx,dword ptr ds:[esi+0x1]
+010513B1  |&gt;  8A06          /mov al,byte ptr ds:[esi]                ;  这也是计算长度
+010513B3  |.  46            |inc esi
+010513B4  |.  84C0          |test al,al
+010513B6  |.^ 75 F9         \jnz short 第四题.010513B1
+010513B8  |.  2BF1          sub esi,ecx
+010513BA  |.  33FF          xor edi,edi
+010513BC  |.  85F6          test esi,esi
+010513BE  |.  7E 22         jle short 第四题.010513E2
+010513C0  |.  BB A8500501   mov ebx,第四题.010550A8                  
+010513C5  |&gt;  8BD6          /mov edx,esi                             ;  这个循环是核心算法了
+010513C7  |.  8D8F 18500501 |lea ecx,dword ptr ds:[edi+0x1055018]    
+010513CD  |.  53            |push ebx                                ; /Arg1 = 010550A8 ASCII &quot;TRmqTaoi&quot;
+010513CE  |.  2BD7          |sub edx,edi                            
+010513D0  |.  E8 9BFDFFFF   |call 第四题.01051170                    ; 核心算法就在里面，跟进去
+010513D5  |.  83C7 05       |add edi,0x5                             ;  出来后我们可以知道，每循环一次，
+010513D8  |.  83C4 04       |add esp,0x4                             ;  取5位输入，输出8个字符
+010513DB  |.  83C3 08       |add ebx,0x8
+010513DE  |.  3BFE          |cmp edi,esi
+010513E0  |.^ 7C E3         \jl short 第四题.010513C5
+010513E2  |&gt;  B9 24320501   mov ecx,第四题.01053224                   ;  usmgRa6FTekuNaomusmkN66eBZmkN7gcBN6kNaokammkPZwmuRmD====
+010513E7  |.  B8 A8500501   mov eax,第四题.010550A8                   ;  ↑用来比较的字符串
+010513EC  |.  0f1f40 00     nop dword ptr ds:[eax]
+010513F0  |&gt;  8A10          /mov dl,byte ptr ds:[eax]                ;  这个循环就是比较过程，有一位不对就会跳到失败
+010513F2  |.  3A11          |cmp dl,byte ptr ds:[ecx]
+010513F4  |.  75 1A         |jnz short 第四题.01051410
+010513F6  |.  84D2          |test dl,dl
+010513F8  |.  74 12         |je short 第四题.0105140C
+010513FA  |.  8A50 01       |mov dl,byte ptr ds:[eax+0x1]
+010513FD  |.  3A51 01       |cmp dl,byte ptr ds:[ecx+0x1]
+01051400  |.  75 0E         |jnz short 第四题.01051410
+01051402  |.  83C0 02       |add eax,0x2
+01051405  |.  83C1 02       |add ecx,0x2
+01051408  |.  84D2          |test dl,dl
+0105140A  |.^ 75 E4         \jnz short 第四题.010513F0
+0105140C  |&gt;  33C0          xor eax,eax                         
+0105140E  |.  EB 05         jmp short 第四题.01051415
+01051410  |&gt;  1BC0          sbb eax,eax                            
+01051412  |.  83C8 01       or eax,0x1
+01051415  |&gt;  8B0D 70300501 mov ecx,dword ptr ds:[&lt;&amp;MSVCP140.std::co&gt;
+0105141B  |.  BA 60320501   mov edx,第四题.01053260                     ;  Congratulations!!!\n
+01051420  |.  85C0          test eax,eax                           
+01051422  |.  74 05         je short 第四题.01051429                    ;  ；关键跳转
+01051424  |.  BA 74320501   mov edx,第四题.01053274                     ;  soooooooooorry\n
+01051429  |&gt;  E8 32010000   call 第四题.01051560
+0105142E  |.  68 84320501   push 第四题.01053284                        ; /pause
+01051433  |.  FF15 F8300501 call dword ptr ds:[&lt;&amp;api-ms-win-crt-runt&gt;; \system
+01051439  |.  83C4 04       add esp,0x4
+0105143C  |.  33C0          xor eax,eax                             
+0105143E  |.  5F            pop edi                               
+0105143F  |.  5E            pop esi                            
+01051440  |.  5B            pop ebx                                 
+01051441  |.  8BE5          mov esp,ebp
+01051443  |.  5D            pop ebp                                  
+01051444  \.  C3            retn
+</code></pre><h2 id="2、简单分析"><a href="#2、简单分析" class="headerlink" title="2、简单分析"></a>2、简单分析</h2><pre><code>运行，f8单步调试，不久便遇到第一个跳转点
 01051349  |.  83F9 0A       cmp ecx,0xA                   
 0105134C  |.  7C 56         jl short 第四题.010513A4  
 根据以前的经验，这里应该是判断用户名是否为10位，若不足10位则跳转到失败
@@ -928,7 +1039,7 @@ int main(){
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1、找到入口"><span class="nav-number">1.</span> <span class="nav-text">1、找到入口</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2、简单分析"><span class="nav-number">2.</span> <span class="nav-text">2、简单分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3、再做突破"><span class="nav-number">3.</span> <span class="nav-text">3、再做突破</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4、核心算法"><span class="nav-number">4.</span> <span class="nav-text">4、核心算法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5、核心算法C语言"><span class="nav-number">5.</span> <span class="nav-text">5、核心算法C语言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6、爆破机"><span class="nav-number">6.</span> <span class="nav-text">6、爆破机</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1、找到入口"><span class="nav-number">1.</span> <span class="nav-text">1、找到入口</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#下面是整个程序的核心执行过程"><span class="nav-number">2.</span> <span class="nav-text">下面是整个程序的核心执行过程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2、简单分析"><span class="nav-number">3.</span> <span class="nav-text">2、简单分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3、再做突破"><span class="nav-number">4.</span> <span class="nav-text">3、再做突破</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4、核心算法"><span class="nav-number">5.</span> <span class="nav-text">4、核心算法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5、核心算法C语言"><span class="nav-number">6.</span> <span class="nav-text">5、核心算法C语言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6、爆破机"><span class="nav-number">7.</span> <span class="nav-text">6、爆破机</span></a></li></ol></div>
             
 
           </div>
