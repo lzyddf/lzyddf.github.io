@@ -1,0 +1,1214 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="OD打开右键-中文搜索引擎-智能搜索，找到error，双击跟踪，上拉，找到入口点（push ebp）,下断点 2、第一次加密f8单步调试，0037140E处有个函数，跟随进去，发现里面有两个循环 1、计算用户名长度，作为循环变量用户名长度固定为22位    00371717  |&amp;gt; /8B55 F0       /mov edx,[local.4]    0037171A  |. |8A02">
+<meta property="og:type" content="article">
+<meta property="og:title" content="EasyEasy解析">
+<meta property="og:url" content="http://yoursite.com/2018/10/23/EasyEasy解析/index.html">
+<meta property="og:site_name" content="Lzyddf&#39;s Hexo">
+<meta property="og:description" content="OD打开右键-中文搜索引擎-智能搜索，找到error，双击跟踪，上拉，找到入口点（push ebp）,下断点 2、第一次加密f8单步调试，0037140E处有个函数，跟随进去，发现里面有两个循环 1、计算用户名长度，作为循环变量用户名长度固定为22位    00371717  |&amp;gt; /8B55 F0       /mov edx,[local.4]    0037171A  |. |8A02">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-10-23T10:23:39.322Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="EasyEasy解析">
+<meta name="twitter:description" content="OD打开右键-中文搜索引擎-智能搜索，找到error，双击跟踪，上拉，找到入口点（push ebp）,下断点 2、第一次加密f8单步调试，0037140E处有个函数，跟随进去，发现里面有两个循环 1、计算用户名长度，作为循环变量用户名长度固定为22位    00371717  |&amp;gt; /8B55 F0       /mov edx,[local.4]    0037171A  |. |8A02">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/10/23/EasyEasy解析/"/>
+
+
+
+
+
+  <title>EasyEasy解析 | Lzyddf's Hexo</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Lzyddf's Hexo</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            目录
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/23/EasyEasy解析/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Lzyddf's Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">EasyEasy解析</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-23T18:05:17+08:00">
+                2018-10-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/逆向/" itemprop="url" rel="index">
+                    <span itemprop="name">逆向</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="OD打开"><a href="#OD打开" class="headerlink" title="OD打开"></a>OD打开</h2><pre><code>右键-中文搜索引擎-智能搜索，找到error，双击跟踪，上拉，找到入口点（push ebp）,下断点
+</code></pre><h2 id="2、第一次加密"><a href="#2、第一次加密" class="headerlink" title="2、第一次加密"></a>2、第一次加密</h2><p>f8单步调试，0037140E处有个函数，跟随进去，发现里面有两个循环</p>
+<p>1、计算用户名长度，作为循环变量<br>用户名长度固定为22位<br>    00371717  |&gt; /8B55 F0       /mov edx,[local.4]<br>    0037171A  |. |8A02          |mov al,byte ptr ds:[edx]<br>    0037171C  |. |8845 FE       |mov byte ptr ss:[ebp-0x2],al<br>    0037171F  |. |8345 F0 01    |add [local.4],0x1<br>    00371723  |. |807D FE 00    |cmp byte ptr ss:[ebp-0x2],0x0<br>    00371727  |.^\75 EE         \jnz short EasyEasy.00371717<br>2、将用户名进行第一次加密</p>
+<pre><code>0037173A  |&gt; /8B45 F4       /mov eax,[local.3]                       ;  EasyEasy.00371110
+0037173D  |. |83C0 03       |add eax,0x3                             ;  可以理解为用户名长度每次从左向右减少3位
+00371740  |. |8945 F4       |mov [local.3],eax
+00371743  |&gt; |8B4D F4        mov ecx,[local.3]                       ;  EasyEasy.00371110
+00371746  |. |3B4D EC       |cmp ecx,[local.5]
+00371749  |. |0F8D 95010000 |jge EasyEasy.003718E4
+0037174F  |. |8B55 08       |mov edx,[arg.1]
+00371752  |. |0355 F4       |add edx,[local.3]                       ;  EasyEasy.00371110
+00371755  |. |0FB602        |movzx eax,byte ptr ds:[edx]             ;  取循环的第3*n次循环位16进制ascii码
+00371758  |. |C1F8 02       |sar eax,0x2
+0037175B  |. |83E0 3F       |and eax,0x3F
+0037175E  |. |8845 FF       |mov byte ptr ss:[ebp-0x1],al
+00371761  |. |0FB64D FF     |movzx ecx,byte ptr ss:[ebp-0x1]         ;  计算结果储存在ecx里
+00371765  |. |8B55 0C       |mov edx,[arg.2]
+00371768  |. |0355 F8       |add edx,[local.2]
+0037176B  |. |A1 E0403700   |mov eax,dword ptr ds:[0x3740E0]         ;  R9Ly6NoJvsIPnWhETYtHe4Sdl+MbGujaZpk102wKCr7/ODg5zXAFqQfxBicV3m8U
+00371770  |. |8A0C08        |mov cl,byte ptr ds:[eax+ecx]            ;  第一次赋值
+00371773  |. |880A          |mov byte ptr ds:[edx],cl                ;  获得加密用字符串的第ecx位，保存
+00371775  |. |8B55 F8       |mov edx,[local.2]
+00371778  |. |83C2 01       |add edx,0x1
+0037177B  |. |8955 F8       |mov [local.2],edx
+0037177E  |. |8B45 08       |mov eax,[arg.1]
+00371781  |. |0345 F4       |add eax,[local.3]                       ;  EasyEasy.00371110
+00371784  |. |0FB608        |movzx ecx,byte ptr ds:[eax]             ;  前两次取的值一样
+00371787  |. |C1E1 04       |shl ecx,0x4
+0037178A  |. |83E1 30       |and ecx,0x30
+0037178D  |. |884D FF       |mov byte ptr ss:[ebp-0x1],cl
+00371790  |. |8B55 F4       |mov edx,[local.3]                       ;  EasyEasy.00371110
+00371793  |. |83C2 01       |add edx,0x1                             ;  保存edx待用
+00371796  |. |3B55 EC       |cmp edx,[local.5]
+00371799  |. |7D 39         |jge short EasyEasy.003717D4             ;  为最后一位则跳转
+0037179B  |. |8B45 08       |mov eax,[arg.1]
+0037179E  |. |0345 F4       |add eax,[local.3]                       ;  EasyEasy.00371110
+003717A1  |. |0FB648 01     |movzx ecx,byte ptr ds:[eax+0x1]         ;  取循环的第3*n+1位循环位16进制ascii码
+003717A5  |. |C1F9 04       |sar ecx,0x4
+003717A8  |. |83E1 0F       |and ecx,0xF
+003717AB  |. |0FB655 FF     |movzx edx,byte ptr ss:[ebp-0x1]
+003717AF  |. |0BD1          |or edx,ecx
+003717B1  |. |8855 FF       |mov byte ptr ss:[ebp-0x1],dl
+003717B4  |. |0FB645 FF     |movzx eax,byte ptr ss:[ebp-0x1]
+003717B8  |. |8B4D 0C       |mov ecx,[arg.2]
+003717BB  |. |034D F8       |add ecx,[local.2]
+003717BE  |. |8B15 E0403700 |mov edx,dword ptr ds:[0x3740E0]         ;  R9Ly6NoJvsIPnWhETYtHe4Sdl+MbGujaZpk102wKCr7/ODg5zXAFqQfxBicV3m8U
+003717C4  |. |8A0402        |mov al,byte ptr ds:[edx+eax]            ;  第二次赋值
+003717C7  |. |8801          |mov byte ptr ds:[ecx],al
+003717C9  |. |8B4D F8       |mov ecx,[local.2]
+003717CC  |. |83C1 01       |add ecx,0x1
+003717CF  |. |894D F8       |mov [local.2],ecx
+003717D2  |. |EB 51         |jmp short EasyEasy.00371825
+003717D4  |&gt; |0FB655 FF     |movzx edx,byte ptr ss:[ebp-0x1]
+003717D8  |. |8B45 0C       |mov eax,[arg.2]
+003717DB  |. |0345 F8       |add eax,[local.2]
+003717DE  |. |8B0D E0403700 |mov ecx,dword ptr ds:[0x3740E0]         ;  R9Ly6NoJvsIPnWhETYtHe4Sdl+MbGujaZpk102wKCr7/ODg5zXAFqQfxBicV3m8U
+003717E4  |. |8A1411        |mov dl,byte ptr ds:[ecx+edx]
+003717E7  |. |8810          |mov byte ptr ds:[eax],dl                ;  给第30位赋值
+003717E9  |. |8B45 F8       |mov eax,[local.2]
+003717EC  |. |83C0 01       |add eax,0x1
+003717EF  |. |8945 F8       |mov [local.2],eax
+003717F2  |. |8B4D 0C       |mov ecx,[arg.2]
+003717F5  |. |034D F8       |add ecx,[local.2]
+003717F8  |. |8A15 60313700 |mov dl,byte ptr ds:[0x373160]           ;  @
+003717FE  |. |8811          |mov byte ptr ds:[ecx],dl                ;  给第31位赋值
+00371800  |. |8B45 F8       |mov eax,[local.2]
+00371803  |. |83C0 01       |add eax,0x1
+00371806  |. |8945 F8       |mov [local.2],eax
+00371809  |. |8B4D 0C       |mov ecx,[arg.2]
+0037180C  |. |034D F8       |add ecx,[local.2]
+0037180F  |. |8A15 60313700 |mov dl,byte ptr ds:[0x373160]           ;  @
+00371815  |. |8811          |mov byte ptr ds:[ecx],dl                ;  给第32位赋值
+00371817  |. |8B45 F8       |mov eax,[local.2]
+0037181A  |. |83C0 01       |add eax,0x1
+0037181D  |. |8945 F8       |mov [local.2],eax
+00371820  |. |E9 BF000000   |jmp EasyEasy.003718E4
+00371825  |&gt; |8B4D 08       |mov ecx,[arg.1]
+00371828  |. |034D F4       |add ecx,[local.3]                       ;  EasyEasy.00371110
+0037182B  |. |0FB651 01     |movzx edx,byte ptr ds:[ecx+0x1]         ;  取循环的第3*n+1位循环位16进制ascii码
+0037182F  |. |C1E2 02       |shl edx,0x2
+00371832  |. |83E2 3C       |and edx,0x3C
+00371835  |. |8855 FF       |mov byte ptr ss:[ebp-0x1],dl
+00371838  |. |8B45 F4       |mov eax,[local.3]                       ;  EasyEasy.00371110
+0037183B  |. |83C0 02       |add eax,0x2
+0037183E  |. |3B45 EC       |cmp eax,[local.5]
+00371841  |. |7D 66         |jge short EasyEasy.003718A9
+00371843  |. |8B4D 08       |mov ecx,[arg.1]
+00371846  |. |034D F4       |add ecx,[local.3]                       ;  EasyEasy.00371110
+00371849  |. |0FB651 02     |movzx edx,byte ptr ds:[ecx+0x2]         ;  取循环的第3*n+2位循环位16进制ascii码
+0037184D  |. |C1FA 06       |sar edx,0x6
+00371850  |. |83E2 03       |and edx,0x3
+00371853  |. |0FB645 FF     |movzx eax,byte ptr ss:[ebp-0x1]
+00371857  |. |0BC2          |or eax,edx
+00371859  |. |8845 FF       |mov byte ptr ss:[ebp-0x1],al
+0037185C  |. |0FB64D FF     |movzx ecx,byte ptr ss:[ebp-0x1]
+00371860  |. |8B55 0C       |mov edx,[arg.2]
+00371863  |. |0355 F8       |add edx,[local.2]
+00371866  |. |A1 E0403700   |mov eax,dword ptr ds:[0x3740E0]         ;  R9Ly6NoJvsIPnWhETYtHe4Sdl+MbGujaZpk102wKCr7/ODg5zXAFqQfxBicV3m8U
+0037186B  |. |8A0C08        |mov cl,byte ptr ds:[eax+ecx]            ;  第三次赋值
+0037186E  |. |880A          |mov byte ptr ds:[edx],cl
+00371870  |. |8B55 F8       |mov edx,[local.2]
+00371873  |. |83C2 01       |add edx,0x1
+00371876  |. |8955 F8       |mov [local.2],edx
+00371879  |. |8B45 08       |mov eax,[arg.1]
+0037187C  |. |0345 F4       |add eax,[local.3]                       ;  EasyEasy.00371110
+0037187F  |. |0FB648 02     |movzx ecx,byte ptr ds:[eax+0x2]         ;  取循环的第3*n+2位循环位16进制ascii码
+00371883  |. |83E1 3F       |and ecx,0x3F
+00371886  |. |884D FF       |mov byte ptr ss:[ebp-0x1],cl
+00371889  |. |0FB655 FF     |movzx edx,byte ptr ss:[ebp-0x1]
+0037188D  |. |8B45 0C       |mov eax,[arg.2]
+00371890  |. |0345 F8       |add eax,[local.2]
+00371893  |. |8B0D E0403700 |mov ecx,dword ptr ds:[0x3740E0]         ;  R9Ly6NoJvsIPnWhETYtHe4Sdl+MbGujaZpk102wKCr7/ODg5zXAFqQfxBicV3m8U
+00371899  |. |8A1411        |mov dl,byte ptr ds:[ecx+edx]            ;  第四次赋值
+0037189C  |. |8810          |mov byte ptr ds:[eax],dl
+0037189E  |. |8B45 F8       |mov eax,[local.2]
+003718A1  |. |83C0 01       |add eax,0x1
+003718A4  |. |8945 F8       |mov [local.2],eax
+003718A7  |. |EB 36         |jmp short EasyEasy.003718DF
+003718A9  |&gt; |0FB64D FF     |movzx ecx,byte ptr ss:[ebp-0x1]
+003718AD  |. |8B55 0C       |mov edx,[arg.2]
+003718B0  |. |0355 F8       |add edx,[local.2]
+003718B3  |. |A1 E0403700   |mov eax,dword ptr ds:[0x3740E0]         ;  R9Ly6NoJvsIPnWhETYtHe4Sdl+MbGujaZpk102wKCr7/ODg5zXAFqQfxBicV3m8U
+003718B8  |. |8A0C08        |mov cl,byte ptr ds:[eax+ecx]
+003718BB  |. |880A          |mov byte ptr ds:[edx],cl                ;  给第31位赋值
+003718BD  |. |8B55 F8       |mov edx,[local.2]
+003718C0  |. |83C2 01       |add edx,0x1
+003718C3  |. |8955 F8       |mov [local.2],edx
+003718C6  |. |8B45 0C       |mov eax,[arg.2]
+003718C9  |. |0345 F8       |add eax,[local.2]
+003718CC  |. |8A0D 60313700 |mov cl,byte ptr ds:[0x373160]           ;  @
+003718D2  |. |8808          |mov byte ptr ds:[eax],cl                ;  给第32位赋值
+003718D4  |. |8B55 F8       |mov edx,[local.2]
+003718D7  |. |83C2 01       |add edx,0x1
+003718DA  |. |8955 F8       |mov [local.2],edx
+003718DD  |. |EB 05         |jmp short EasyEasy.003718E4
+003718DF  |&gt;^\E9 56FEFFFF   \jmp EasyEasy.0037173A
+</code></pre><h2 id="3、第二次加密"><a href="#3、第二次加密" class="headerlink" title="3、第二次加密"></a>3、第二次加密</h2><p>从call中出来，发现下面定义了一堆字符，往下还有一个循环，是第二次加密</p>
+<pre><code>003715F6  |&gt; /8B85 50FFFFFF /mov eax,[local.44]                      ;  local.44为循环变量
+003715FC  |. |83C0 01       |add eax,0x1
+003715FF  |. |8985 50FFFFFF |mov [local.44],eax
+00371605  |&gt; |83BD 50FFFFFF&gt; cmp [local.44],0x20
+0037160C  |. |0F8D 90000000 |jge EasyEasy.003716A2                   ;  循环到第33次跳出
+00371612  |. |8B8D 50FFFFFF |mov ecx,[local.44]
+00371618  |. |0FBE940D 54FF&gt;|movsx edx,byte ptr ss:[ebp+ecx-0xAC]    ;  取第一次加密后的第一位
+00371620  |. |8B85 50FFFFFF |mov eax,[local.44]
+00371626  |. |0FBE8C05 10FF&gt;|movsx ecx,byte ptr ss:[ebp+eax-0xF0]    ;  用来加密的字符串1
+0037162E  |. |33D1          |xor edx,ecx
+00371630  |. |8B85 50FFFFFF |mov eax,[local.44]
+00371636  |. |885405 D4     |mov byte ptr ss:[ebp+eax-0x2C],dl
+0037163A  |. |8B8D 50FFFFFF |mov ecx,[local.44]
+00371640  |. |81E1 01000080 |and ecx,0x80000001
+00371646  |. |79 05         |jns short EasyEasy.0037164D             ;  大于等于0则跳转
+00371648  |. |49            |dec ecx
+00371649  |. |83C9 FE       |or ecx,0xFFFFFFFE
+0037164C  |. |41            |inc ecx
+0037164D  |&gt; |85C9          |test ecx,ecx
+0037164F  |. |75 27         |jnz short EasyEasy.00371678
+00371651  |. |8B95 50FFFFFF |mov edx,[local.44]
+00371657  |. |0FBE8415 30FF&gt;|movsx eax,byte ptr ss:[ebp+edx-0xD0]    ;  用来加密的字符串2
+0037165F  |. |8B8D 50FFFFFF |mov ecx,[local.44]
+00371665  |. |0FBE540D D4   |movsx edx,byte ptr ss:[ebp+ecx-0x2C]
+0037166A  |. |2BD0          |sub edx,eax
+0037166C  |. |8B85 50FFFFFF |mov eax,[local.44]
+00371672  |. |885405 D4     |mov byte ptr ss:[ebp+eax-0x2C],dl
+00371676  |. |EB 25         |jmp short EasyEasy.0037169D
+00371678  |&gt; |8B8D 50FFFFFF |mov ecx,[local.44]
+0037167E  |. |0FBE940D 30FF&gt;|movsx edx,byte ptr ss:[ebp+ecx-0xD0]
+00371686  |. |8B85 50FFFFFF |mov eax,[local.44]
+0037168C  |. |0FBE4C05 D4   |movsx ecx,byte ptr ss:[ebp+eax-0x2C]
+00371691  |. |03CA          |add ecx,edx
+00371693  |. |8B95 50FFFFFF |mov edx,[local.44]
+00371699  |. |884C15 D4     |mov byte ptr ss:[ebp+edx-0x2C],cl
+0037169D  |&gt;^\E9 54FFFFFF   \jmp EasyEasy.003715F6
+</code></pre><p>发现用来加密的字符串就是上面定义的一堆字符</p>
+<h2 id="4、关键跳转"><a href="#4、关键跳转" class="headerlink" title="4、关键跳转"></a>4、关键跳转</h2><pre><code>003716A2  |&gt; \8D45 D4       lea eax,[local.11]
+003716A5  |.  50            push eax                                 ; /Arg1 = 00000020
+003716A6  |.  E8 55020000   call EasyEasy.00371900                   ; \EasyEasy.00371900
+003716AB  |.  83C4 04       add esp,0x4
+003716AE  |.  83F8 01       cmp eax,0x1
+003716B1  |.  75 16         jnz short EasyEasy.003716C9              ;关键跳转
+003716B3  |.  6A 40         push 0x40                                ; /Style = MB_OK|MB_ICONASTERISK|MB_APPLMODAL
+003716B5  |.  68 A8403700   push EasyEasy.003740A8                   ; |Success
+003716BA  |.  68 B0403700   push EasyEasy.003740B0                   ; |Congratulations!
+003716BF  |.  6A 00         push 0x0                                 ; |hOwner = NULL
+003716C1  |.  FF15 D0303700 call dword ptr ds:[&lt;&amp;USER32.MessageBoxA&gt;&gt;; \MessageBoxA
+003716C7  |.  EB 14         jmp short EasyEasy.003716DD
+003716C9  |&gt;  6A 40         push 0x40                                ; /Style = MB_OK|MB_ICONASTERISK|MB_APPLMODAL
+003716CB  |.  68 C4403700   push EasyEasy.003740C4                   ; |Erros
+003716D0  |.  68 CC403700   push EasyEasy.003740CC                   ; |Failed!
+003716D5  |.  6A 00         push 0x0                                 ; |hOwner = NULL
+003716D7  |.  FF15 D0303700 call dword ptr ds:[&lt;&amp;USER32.MessageBoxA&gt;&gt;; \MessageBoxA
+</code></pre><p>上面的call EasyEasy.00371900会改变eax的值，跟进去看看</p>
+<h2 id="5、结果比较"><a href="#5、结果比较" class="headerlink" title="5、结果比较"></a>5、结果比较</h2><p>出现了第三个循环，是用来与正确flag得出的结果进行比较用的</p>
+<pre><code>0037199D  |&gt; /8B45 FC       /mov eax,[local.1]
+003719A0  |. |83C0 01       |add eax,0x1
+003719A3  |. |8945 FC       |mov [local.1],eax
+003719A6  |&gt; |837D FC 20     cmp [local.1],0x20
+003719AA  |. |7D 20         |jge short EasyEasy.003719CC
+003719AC  |. |8B4D 08       |mov ecx,[arg.1]
+003719AF  |. |034D FC       |add ecx,[local.1]
+003719B2  |. |0FBE11        |movsx edx,byte ptr ds:[ecx]
+003719B5  |. |8B45 FC       |mov eax,[local.1]
+003719B8  |. |0FBE4C05 D8   |movsx ecx,byte ptr ss:[ebp+eax-0x28]
+003719BD  |. |3BD1          |cmp edx,ecx                             ;  关键比较
+003719BF  |. |74 09         |je short EasyEasy.003719CA
+003719C1  |. |C745 F8 00000&gt;|mov [local.2],0x0
+003719C8  |. |EB 02         |jmp short EasyEasy.003719CC
+003719CA  |&gt;^\EB D1         \jmp short EasyEasy.0037199D
+</code></pre><h2 id="6、将前两个加密算法写成c语言"><a href="#6、将前两个加密算法写成c语言" class="headerlink" title="6、将前两个加密算法写成c语言"></a>6、将前两个加密算法写成c语言</h2><pre><code>#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+int main(){
+    char name[100]={&apos;\0&apos;};//待输入的用户名 
+    char s[]={&quot;R9Ly6NoJvsIPnWhETYtHe4Sdl+MbGujaZpk102wKCr7/ODg5zXAFqQfxBicV3m8U&quot;};// 第一次加密用的字符串 
+    char s2[100]={&apos;\0&apos;};//存放第一次加密后的结果 
+    //第二次加密用的字符串1 
+    char s3[]={
+        0x6D,0x6C,0x3A,0x7A,0x1D,0x4F,0x8A,0x7F,
+        0xB8,0x4A,0x57,0x13,0x2F,0xA7,0x63,0xBA,
+        0xC5,0xAA,0x65,0x99,0xDF,0x58,0xF5,0x54,
+        0x46,0xAB,0xB2,0xA0,0x31,0xC0,0xEB,0x38
+    };
+    //第二次加密用的字符串2
+    char s4[]={
+        0x57,0x4D,0x4E,0x5E,0x4B,0x5A,0x51,0x55,
+        0x5D,0x5E,0x5F,0x51,0x5C,0x4D,0x58,0x5F,
+        0x57,0x54,0x5D,0x58,0x59,0x59,0x58,0x5F,
+        0x5B,0x58,0x5F,0x5B,0x5D,0x4C,0x52,0x5F
+    };
+    char s5[100]={&apos;\0&apos;};//存放第二次加密后的结果 
+    char s6[]={
+        0xEF,0x68,0x14,0x68,0xEB,0x91,0x74,0x83,
+        0x77,0x6A,0xC2,0xA2,0xA8,0x41,0xDC,0x30,
+        0x54,0x4D,0xAE,0x30,0x2F,0xC2,0x41,0x75,
+        0xCD,0x34,0x7F,0x33,0xF3,0xE0,0x59,0xD7
+    };
+    int l,i,i2,j=0;//l计算用户名长度，i为循环变量,i2暂存i，j每次赋值后加一 
+    unsigned int x,y;
+    gets(name);
+    fflush(stdin); 
+    l=strlen(name);
+    //第一次循环 
+    for(i=0;i&lt;l;i+=3){
+        i2=i;
+        if(i2&gt;=l){
+            break;
+        }
+        x=name[i];
+        x/=4;
+        x&amp;=0x3F;
+        s2[j]=s[x];
+        j++;
+        x=name[i];
+        x*=16;
+        x&amp;=0x30;
+        i2=i+1;
+        if(i2&gt;=l){
+            s2[j]=s[x];
+            j++;
+            s2[j]=&apos;@&apos;;
+            j++;
+            s2[j]=&apos;@&apos;;
+            j++;
+            break;
+        }
+        y=name[i+1];
+        y/=16;
+        y&amp;=0xF;
+        y|=x;
+        s2[j]=s[y];
+        j++;
+        x=name[i+1];
+        x*=4;
+        x&amp;=0x3C;
+        i2=i+2;
+        if(i2&gt;=l){
+            s2[j]=s[x];
+            j++;
+            s2[j]=&apos;@&apos;;
+            j++;
+            break;
+        }
+        y=name[i+2];
+        y/=64;
+        y&amp;=3;
+        y|=x;
+        s2[j]=s[y];
+        j++;
+        x=name[i+2];
+        x&amp;=0x3F;
+        s2[j]=s[x];
+        j++;
+    }
+    //第二次循环 
+    for(i=0;i&lt;0x20;i++){
+        x=s2[i];
+        y=s3[i];
+        x^=y;
+        y=x;
+        s5[i]=x;
+        i2=i;
+        i2&amp;=0x80000001;
+        if(i2&gt;=0){
+            if(i2==0){
+                x=s4[i];
+                y-=x;
+                s5[i]=y;
+            }else{
+                x=s4[i];
+                y+=x;
+                s5[i]=y;
+            }
+        }
+    }
+    printf(&quot;最终字符串：%s\n&quot;,s5);
+    printf(&quot;拆分成一个个字符：&quot;);
+    for(i=0;i&lt;32;i++){
+        printf(&quot;%c&quot;,s5[i]);
+    }
+    system(&quot;pause&quot;);
+    return 0;
+}
+</code></pre><p>发现这样不能推出flag，我们先将第二个循环逆着写一遍，输入正确结果，算出第一次加密后的字符串</p>
+<h2 id="7、逆算法"><a href="#7、逆算法" class="headerlink" title="7、逆算法"></a>7、逆算法</h2><pre><code>#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+int main(){
+    char name[100]={&apos;\0&apos;};//待输入的用户名 
+    char s[]={&quot;R9Ly6NoJvsIPnWhETYtHe4Sdl+MbGujaZpk102wKCr7/ODg5zXAFqQfxBicV3m8U&quot;};// 第一次加密用的字符串 
+    char s2[100]={&apos;\0&apos;};//存放第一次加密后的结果 
+    //第二次加密用的字符串1 
+    char s3[]={
+        0x6D,0x6C,0x3A,0x7A,0x1D,0x4F,0x8A,0x7F,
+        0xB8,0x4A,0x57,0x13,0x2F,0xA7,0x63,0xBA,
+        0xC5,0xAA,0x65,0x99,0xDF,0x58,0xF5,0x54,
+        0x46,0xAB,0xB2,0xA0,0x31,0xC0,0xEB,0x38
+    };
+    //第二次加密用的字符串2
+    char s4[]={
+        0x57,0x4D,0x4E,0x5E,0x4B,0x5A,0x51,0x55,
+        0x5D,0x5E,0x5F,0x51,0x5C,0x4D,0x58,0x5F,
+        0x57,0x54,0x5D,0x58,0x59,0x59,0x58,0x5F,
+        0x5B,0x58,0x5F,0x5B,0x5D,0x4C,0x52,0x5F
+    };
+    char s5[]={
+        0xEF,0x68,0x14,0x68,0xEB,0x91,0x74,0x83,
+        0x77,0x6A,0xC2,0xA2,0xA8,0x41,0xDC,0x30,
+        0x54,0x4D,0xAE,0x30,0x2F,0xC2,0x41,0x75,
+        0xCD,0x34,0x7F,0x33,0xF3,0xE0,0x59,0xD7
+    };//存放第二次加密后的结果 
+    char s6[]={
+        0xEF,0x68,0x14,0x68,0xEB,0x91,0x74,0x83,
+        0x77,0x6A,0xC2,0xA2,0xA8,0x41,0xDC,0x30,
+        0x54,0x4D,0xAE,0x30,0x2F,0xC2,0x41,0x75,
+        0xCD,0x34,0x7F,0x33,0xF3,0xE0,0x59,0xD7
+    };
+    int l,i,i2,j=0;//l计算用户名长度，i为循环变量,i2暂存i，j每次赋值后加一 
+    unsigned int x,y;
+    //第二次循环 
+    for(i=0;i&lt;0x20;i++){
+        y=s5[i];
+        x=s4[i];
+        i2=i;
+        i2&amp;=0x80000001;
+        if(i2&gt;=0){
+            if(i2==0){
+                y+=x;
+            }else{
+                y-=x;
+            }
+        }
+        x=y;
+        y=s3[i];
+        x^=y;
+        s2[i]=x;
+    }
+    printf(&quot;最终字符串：%s\n&quot;,s2);
+    system(&quot;pause&quot;);
+    return 0;
+}
+</code></pre><p>运行，得到字符串”+wXp+xOQlFvB+SWknSnAW1lBnwlxaT@@”</p>
+<h2 id="8、对第一个循环进行爆破"><a href="#8、对第一个循环进行爆破" class="headerlink" title="8、对第一个循环进行爆破"></a>8、对第一个循环进行爆破</h2><pre><code>#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+int main(){
+    char name[100]={
+        &apos;f&apos;,&apos;l&apos;,&apos;a&apos;,&apos;g&apos;,&apos;{&apos;,32,32,32,
+        32,32,32,32,32,32,32,32,
+        32,32,32,32,32,&apos;}&apos;
+    };//待输入的用户名 
+    char s[]={&quot;R9Ly6NoJvsIPnWhETYtHe4Sdl+MbGujaZpk102wKCr7/ODg5zXAFqQfxBicV3m8U&quot;};// 第一次加密用的字符串 
+    char s2[100]={&apos;\0&apos;};//存放第一次加密后的结果 
+    //第二次加密用的字符串1 
+    char s3[]={
+        0x6D,0x6C,0x3A,0x7A,0x1D,0x4F,0x8A,0x7F,
+        0xB8,0x4A,0x57,0x13,0x2F,0xA7,0x63,0xBA,
+        0xC5,0xAA,0x65,0x99,0xDF,0x58,0xF5,0x54,
+        0x46,0xAB,0xB2,0xA0,0x31,0xC0,0xEB,0x38
+    };
+    //第二次加密用的字符串2
+    char s4[]={
+        0x57,0x4D,0x4E,0x5E,0x4B,0x5A,0x51,0x55,
+        0x5D,0x5E,0x5F,0x51,0x5C,0x4D,0x58,0x5F,
+        0x57,0x54,0x5D,0x58,0x59,0x59,0x58,0x5F,
+        0x5B,0x58,0x5F,0x5B,0x5D,0x4C,0x52,0x5F
+    };
+    char s5[]={&quot;+wXp+xOQlFvB+SWknSnAW1lBnwlxaT@@&quot;};//存放第二次加密后的结果 
+    char s6[]={
+        0xEF,0x68,0x14,0x68,0xEB,0x91,0x74,0x83,
+        0x77,0x6A,0xC2,0xA2,0xA8,0x41,0xDC,0x30,
+        0x54,0x4D,0xAE,0x30,0x2F,0xC2,0x41,0x75,
+        0xCD,0x34,0x7F,0x33,0xF3,0xE0,0x59,0xD7
+    };
+    int l,i,i2,j=0;//l计算用户名长度，i为循环变量,i2暂存i，j每次赋值后加一 
+    unsigned int x,y;
+    fflush(stdin); 
+    l=strlen(name);
+    //第一次循环 
+    while(1){
+        j=0;
+        for(i=0;i&lt;22;i+=3){
+            i2=i;
+            if(i2&gt;=22){
+                break;
+            }
+            x=name[i];
+            x/=4;
+            x&amp;=0x3F;
+            s2[j]=s[x];
+            if(s2[j]!=s5[j]){
+                name[i]++;
+                if(name[i]&gt;126){
+                    name[i-1]++;
+                }
+                break;
+            }
+            j++;
+            x=name[i];
+            x*=16;
+            x&amp;=0x30;
+            i2=i+1;
+            if(i2&gt;=22){
+                s2[j]=s[x];
+                j++;
+                s2[j]=&apos;@&apos;;
+                j++;
+                s2[j]=&apos;@&apos;;
+                j++;
+                break;
+            }
+            y=name[i+1];
+            y/=16;
+            y&amp;=0xF;
+            y|=x;
+            s2[j]=s[y];
+            if(s2[j]!=s5[j]){
+                name[i+1]++;
+                if(name[i+1]&gt;126){
+                    name[i]++;
+                    name[i+1]=32;
+                }
+                break;
+            }
+            j++;
+            x=name[i+1];
+            x*=4;
+            x&amp;=0x3C;
+            i2=i+2;
+            if(i2&gt;=22){
+                s2[j]=s[x];
+                j++;
+                s2[j]=&apos;@&apos;;
+                j++;
+                break;
+            }
+            y=name[i+2];
+            y/=64;
+            y&amp;=3;
+            y|=x;
+            s2[j]=s[y];
+            if(s2[j]!=s5[j]){
+                name[i+2]++;
+                if(name[i+2]&gt;126){
+                    name[i+1]++;
+                    name[i+2]=32;
+                }
+                break;
+            }
+            j++;
+            x=name[i+2];
+            x&amp;=0x3F;
+            s2[j]=s[x];
+            if(s2[j]!=s5[j]){
+                name[i+2]++;
+                if(name[i+2]&gt;126){
+                    name[i+1]++;
+                    name[i+2]=32;
+                }
+                break;
+            }
+            j++;
+        }
+        if(j==32){
+            break;
+        }
+    }
+    printf(&quot;%s&quot;,name); 
+    system(&quot;pause&quot;);
+    return 0;
+}
+</code></pre><p>运行，得到正确flag</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/09/16/PHP连接数据库/" rel="next" title="PHP连接数据库">
+                <i class="fa fa-chevron-left"></i> PHP连接数据库
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/10/25/base-N解析/" rel="prev" title="base-N解析">
+                base-N解析 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">John Doe</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">25</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#OD打开"><span class="nav-number">1.</span> <span class="nav-text">OD打开</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2、第一次加密"><span class="nav-number">2.</span> <span class="nav-text">2、第一次加密</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3、第二次加密"><span class="nav-number">3.</span> <span class="nav-text">3、第二次加密</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4、关键跳转"><span class="nav-number">4.</span> <span class="nav-text">4、关键跳转</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5、结果比较"><span class="nav-number">5.</span> <span class="nav-text">5、结果比较</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6、将前两个加密算法写成c语言"><span class="nav-number">6.</span> <span class="nav-text">6、将前两个加密算法写成c语言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7、逆算法"><span class="nav-number">7.</span> <span class="nav-text">7、逆算法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8、对第一个循环进行爆破"><span class="nav-number">8.</span> <span class="nav-text">8、对第一个循环进行爆破</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

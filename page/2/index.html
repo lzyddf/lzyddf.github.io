@@ -81,7 +81,7 @@
 
 <meta property="og:type" content="website">
 <meta property="og:title" content="Lzyddf&#39;s Hexo">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:url" content="http://yoursite.com/page/2/index.html">
 <meta property="og:site_name" content="Lzyddf&#39;s Hexo">
 <meta property="og:locale" content="zh-Hans">
 <meta name="twitter:card" content="summary">
@@ -115,7 +115,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/page/2/"/>
 
 
 
@@ -239,7 +239,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/25/base-N解析/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/22/atom编辑器的安装与使用/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="John Doe">
@@ -258,7 +258,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/10/25/base-N解析/" itemprop="url">base-N解析</a></h1>
+                <a class="post-title-link" href="/2018/05/22/atom编辑器的安装与使用/" itemprop="url">atom编辑器的安装与使用</a></h1>
         
 
         <div class="post-meta">
@@ -270,8 +270,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-25T21:05:42+08:00">
-                2018-10-25
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-22T21:50:23+08:00">
+                2018-05-22
               </time>
             
 
@@ -293,8 +293,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/逆向/" itemprop="url" rel="index">
-                    <span itemprop="name">逆向</span>
+                  <a href="/categories/Ubuntu/" itemprop="url" rel="index">
+                    <span itemprop="name">Ubuntu</span>
                   </a>
                 </span>
 
@@ -332,12 +332,15 @@
       
         
           
-          1、找到入口用OD打开，右键-中文搜索引擎-智能搜索，找到字符串”please input your flag:”，双击跟踪，往上找入口点（push ebp）,下断点
-下面是整个程序的核心执行过程01051310  /$  55            push ebp                
+          安装通过官网源下载最新版
+    $ sudo wget https://atom.io/download/deb -O atom64.deb
+    $ sudo dpkg -i atom64.deb
+这时候在图形界面打开atom会报错解决办法
+    $ sudo cp /usr/lib/x86
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/10/25/base-N解析/#more" rel="contents">
+            <a class="btn" href="/2018/05/22/atom编辑器的安装与使用/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -388,7 +391,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/23/EasyEasy解析/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/21/xterm中文显示/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="John Doe">
@@ -407,7 +410,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/10/23/EasyEasy解析/" itemprop="url">EasyEasy解析</a></h1>
+                <a class="post-title-link" href="/2018/05/21/xterm中文显示/" itemprop="url">xterm中文显示</a></h1>
         
 
         <div class="post-meta">
@@ -419,8 +422,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-23T18:05:17+08:00">
-                2018-10-23
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-21T17:57:42+08:00">
+                2018-05-21
               </time>
             
 
@@ -442,8 +445,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/逆向/" itemprop="url" rel="index">
-                    <span itemprop="name">逆向</span>
+                  <a href="/categories/Ubuntu/" itemprop="url" rel="index">
+                    <span itemprop="name">Ubuntu</span>
                   </a>
                 </span>
 
@@ -481,13 +484,14 @@
       
         
           
-          OD打开右键-中文搜索引擎-智能搜索，找到error，双击跟踪，上拉，找到入口点（push ebp）,下断点
-2、第一次加密f8单步调试，0037140E处有个函数，跟随进去，发现里面有两个循环
-1、计算用户名长度，作为循环变量用户名长度固定为22位    00371717  |&gt; /8B55
+          在家目录新建文件.Xdefaults    $ sudo vi ~/.Xdefaults
+加入以下内容
+    *VT100.font: 9x15
+    *VT100.utf8Fonts.font: -misc-fixed-medium-r-normal--18-120-100-100-c-90-
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/10/23/EasyEasy解析/#more" rel="contents">
+            <a class="btn" href="/2018/05/21/xterm中文显示/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -538,7 +542,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/16/PHP连接数据库/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/21/ubuntu服务器开启图形界面/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="John Doe">
@@ -557,7 +561,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/09/16/PHP连接数据库/" itemprop="url">PHP连接数据库</a></h1>
+                <a class="post-title-link" href="/2018/05/21/ubuntu服务器开启图形界面/" itemprop="url">ubuntu服务器开启图形界面</a></h1>
         
 
         <div class="post-meta">
@@ -569,8 +573,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-16T13:27:26+08:00">
-                2018-09-16
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-21T17:55:39+08:00">
+                2018-05-21
               </time>
             
 
@@ -592,8 +596,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Mysql/" itemprop="url" rel="index">
-                    <span itemprop="name">Mysql</span>
+                  <a href="/categories/Ubuntu/" itemprop="url" rel="index">
+                    <span itemprop="name">Ubuntu</span>
                   </a>
                 </span>
 
@@ -631,15 +635,17 @@
       
         
           
-          1、mysql_connect()·描述：PHP连接Mysql服务器
-·语法：resource $link = mysql_connect($hostname,$username,$password)
-·参数：
-    ·$hostname:域名或IP地址。也可以加端口号
-    ·$usernam
+          开启图形界面1、获取root用户权限
+    $ sudo su root
+2、更新系统软件列表与软件包
+    # apt-get update
+    # apt-get upgrade
+3、安装gnome核心组件
+    # apt-get install --no-install-recom
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/09/16/PHP连接数据库/#more" rel="contents">
+            <a class="btn" href="/2018/05/21/ubuntu服务器开启图形界面/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -690,7 +696,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/16/SQL增删改查/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/20/文学摘录/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="John Doe">
@@ -709,7 +715,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/09/16/SQL增删改查/" itemprop="url">SQL增删改查</a></h1>
+                <a class="post-title-link" href="/2018/05/20/文学摘录/" itemprop="url">文学摘录</a></h1>
         
 
         <div class="post-meta">
@@ -721,8 +727,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-16T12:40:48+08:00">
-                2018-09-16
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-20T07:49:54+08:00">
+                2018-05-20
               </time>
             
 
@@ -744,8 +750,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Mysql/" itemprop="url" rel="index">
-                    <span itemprop="name">Mysql</span>
+                  <a href="/categories/Other/" itemprop="url" rel="index">
+                    <span itemprop="name">Other</span>
                   </a>
                 </span>
 
@@ -783,12 +789,22 @@
       
         
           
-          添加记录insert into table_name(字段1，字段2，字段3……) values(值1，值2，值3……)
-例：insert into news(title,content,hits) values(&apos;title&apos;,&apos;content&apos;,100);
+          《瓦尔登湖》人们所做的邪恶死后还活着。
+--莎士比亚《尤科乌斯·凯撒》
+
+我是我眺望的一切景色的君王，
+我在那里的权力无可置疑。
+--威廉·柯珀
+
+一切悟性都随着清晨苏醒。
+--《吠陀经》
+
+坐在精神的世界里驰骋，这是我从书中获得的优势。
+一杯美酒即令人沉醉，当喝下深奥的学说的琼浆的时候，我便体验到
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/09/16/SQL增删改查/#more" rel="contents">
+            <a class="btn" href="/2018/05/20/文学摘录/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -839,7 +855,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/16/数据类型/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/19/ubuntu搭载网页环境/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="John Doe">
@@ -858,7 +874,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/09/16/数据类型/" itemprop="url">数据类型</a></h1>
+                <a class="post-title-link" href="/2018/05/19/ubuntu搭载网页环境/" itemprop="url">ubuntu搭载网页环境</a></h1>
         
 
         <div class="post-meta">
@@ -870,8 +886,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-16T12:40:36+08:00">
-                2018-09-16
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-19T18:26:53+08:00">
+                2018-05-19
               </time>
             
 
@@ -893,8 +909,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Mysql/" itemprop="url" rel="index">
-                    <span itemprop="name">Mysql</span>
+                  <a href="/categories/Ubuntu/" itemprop="url" rel="index">
+                    <span itemprop="name">Ubuntu</span>
                   </a>
                 </span>
 
@@ -932,14 +948,17 @@
       
         
           
-          整型tinyint      最小型整数    0~255/-128~127    1个字节
-smalint      小型整数      0~65535           2个字节
-mediumint    中型整数      0~1677万          3个字节
-int         
+          安装Apache1、安装
+$ sudo apt-get install apache2
+2、查看状态
+$ sudo service apache2 restart/status/start/stop   
+3、关闭防火墙80端口限制
+$ sudo ufw allow 80 
+后面MySQL数据库33
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/09/16/数据类型/#more" rel="contents">
+            <a class="btn" href="/2018/05/19/ubuntu搭载网页环境/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -990,7 +1009,7 @@ int
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/16/数据表操作/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/19/ubuntu安装VMware-Tools/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="John Doe">
@@ -1009,7 +1028,7 @@ int
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/09/16/数据表操作/" itemprop="url">数据表操作</a></h1>
+                <a class="post-title-link" href="/2018/05/19/ubuntu安装VMware-Tools/" itemprop="url">ubuntu安装VMware-Tools</a></h1>
         
 
         <div class="post-meta">
@@ -1021,8 +1040,8 @@ int
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-16T12:40:30+08:00">
-                2018-09-16
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-19T11:26:15+08:00">
+                2018-05-19
               </time>
             
 
@@ -1044,8 +1063,8 @@ int
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Mysql/" itemprop="url" rel="index">
-                    <span itemprop="name">Mysql</span>
+                  <a href="/categories/Ubuntu/" itemprop="url" rel="index">
+                    <span itemprop="name">Ubuntu</span>
                   </a>
                 </span>
 
@@ -1083,16 +1102,20 @@ int
       
         
           
-          选择数据库：use db_name;
-显示当前数据库下的所有数据表（文件）：show tables;
-创建数据表：create table table_name(列名1 列的类型 列的属性，列名2 列的类型 列的属性……）;
-注：不能以数字开头
-列的属性：
-    null | not null：该
+          1、加载安装文件如果安装按钮是灰色的，右键虚拟机-设置-软盘
+    使用物理驱动器：自动检测
+就可以安装了
+2、拷贝加载后，VMware Tools会加载到桌面
+右键，Copy
+进入本地home/
+右键空白处，Paste
+3、解压打开terminal（终端）
+输入
+tar -xzvf  VMwar
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/09/16/数据表操作/#more" rel="contents">
+            <a class="btn" href="/2018/05/19/ubuntu安装VMware-Tools/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1143,7 +1166,7 @@ int
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/16/数据库操作/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/19/ubuntu安装搜狗拼音输入法/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="John Doe">
@@ -1162,7 +1185,7 @@ int
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/09/16/数据库操作/" itemprop="url">数据库操作</a></h1>
+                <a class="post-title-link" href="/2018/05/19/ubuntu安装搜狗拼音输入法/" itemprop="url">ubuntu安装搜狗拼音输入法</a></h1>
         
 
         <div class="post-meta">
@@ -1174,8 +1197,8 @@ int
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-16T12:40:22+08:00">
-                2018-09-16
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-19T11:25:49+08:00">
+                2018-05-19
               </time>
             
 
@@ -1197,8 +1220,8 @@ int
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Mysql/" itemprop="url" rel="index">
-                    <span itemprop="name">Mysql</span>
+                  <a href="/categories/Ubuntu/" itemprop="url" rel="index">
+                    <span itemprop="name">Ubuntu</span>
                   </a>
                 </span>
 
@@ -1236,14 +1259,13 @@ int
       
         
           
-          创建数据库：create database [if not exists] db_name [charset utf8];
-查看数据库默认字符集：show create database db_name;
-删除数据库:drop database [if exists] db_name;
-通过命令来修
+          1、下载文件进入官网http://pinyin.sogou.com/linux，下载自己对应的系统位数安装包
+2、打开终端，进入下载目录$ cd Downloads/  (以实际目录为准)
+3、安装$ sudo dpkg -i sougoupinyin…….deb (以你下载的实际安装包名字为标准)
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/09/16/数据库操作/#more" rel="contents">
+            <a class="btn" href="/2018/05/19/ubuntu安装搜狗拼音输入法/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1294,7 +1316,7 @@ int
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/11/C语言空函数转汇编/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/19/hexo常用命令笔记/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="John Doe">
@@ -1313,7 +1335,7 @@ int
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/09/11/C语言空函数转汇编/" itemprop="url">C语言空函数转汇编</a></h1>
+                <a class="post-title-link" href="/2018/05/19/hexo常用命令笔记/" itemprop="url">hexo常用命令笔记</a></h1>
         
 
         <div class="post-meta">
@@ -1325,8 +1347,8 @@ int
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-11T19:30:56+08:00">
-                2018-09-11
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-19T09:16:39+08:00">
+                2018-05-19
               </time>
             
 
@@ -1348,8 +1370,8 @@ int
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/汇编/" itemprop="url" rel="index">
-                    <span itemprop="name">汇编</span>
+                  <a href="/categories/Hexo/" itemprop="url" rel="index">
+                    <span itemprop="name">Hexo</span>
                   </a>
                 </span>
 
@@ -1387,22 +1409,14 @@ int
       
         
           
-          //保存原来栈底
-    push ebp
-//提升堆栈
-    mov ebp,esp
-    sub esp,0x40
-//保存现场
-    push esi
-    push edi
-    push ebx
-//填充缓存区
-    mov eax,0xCCCCCCCC
-    mov ecx
+          进入hexo主目录文件夹（假设文件夹名为blog）$ cd blog
+常用命令$ sudo hexo new post &quot;文章名&quot; #新建文章
+$ sudo hexo g == hexo generate #生成静态页面到public目录
+$ sudo hexo s == hex
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/09/11/C语言空函数转汇编/#more" rel="contents">
+            <a class="btn" href="/2018/05/19/hexo常用命令笔记/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1453,7 +1467,7 @@ int
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/24/汇编条件转移指令/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/19/github-ssh认证/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="John Doe">
@@ -1472,7 +1486,7 @@ int
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/08/24/汇编条件转移指令/" itemprop="url">汇编条件转移指令</a></h1>
+                <a class="post-title-link" href="/2018/05/19/github-ssh认证/" itemprop="url">github ssh认证</a></h1>
         
 
         <div class="post-meta">
@@ -1484,8 +1498,8 @@ int
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-24T08:43:06+08:00">
-                2018-08-24
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-19T08:18:28+08:00">
+                2018-05-19
               </time>
             
 
@@ -1507,8 +1521,8 @@ int
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/汇编/" itemprop="url" rel="index">
-                    <span itemprop="name">汇编</span>
+                  <a href="/categories/Hexo/" itemprop="url" rel="index">
+                    <span itemprop="name">Hexo</span>
                   </a>
                 </span>
 
@@ -1546,17 +1560,13 @@ int
       
         
           
-          指令    含义            检测的相关标志位
-jcxz    cx为0则转移     cx=0
-je      等于则转移      zf=1
-jne     不等于则转移    zf=0
-jb      低于则转移      cf=1
-jnb     不低于则转移    cf=0
-ja
+          1、设置Git的user name和email(即在github注册时填写的)$ git config --global user.name &quot;username&quot;
+$ git config --global user.email &quot;useremail&quot;
+2、生
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/08/24/汇编条件转移指令/#more" rel="contents">
+            <a class="btn" href="/2018/05/19/github-ssh认证/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1607,7 +1617,7 @@ ja
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/15/16进制表/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/18/hexo到github的推送和拉取/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="John Doe">
@@ -1626,7 +1636,7 @@ ja
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/08/15/16进制表/" itemprop="url">16进制表</a></h1>
+                <a class="post-title-link" href="/2018/05/18/hexo到github的推送和拉取/" itemprop="url">hexo到github的推送和拉取</a></h1>
         
 
         <div class="post-meta">
@@ -1638,8 +1648,8 @@ ja
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-15T10:50:42+08:00">
-                2018-08-15
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-18T21:14:39+08:00">
+                2018-05-18
               </time>
             
 
@@ -1661,8 +1671,8 @@ ja
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/汇编/" itemprop="url" rel="index">
-                    <span itemprop="name">汇编</span>
+                  <a href="/categories/Hexo/" itemprop="url" rel="index">
+                    <span itemprop="name">Hexo</span>
                   </a>
                 </span>
 
@@ -1700,16 +1710,16 @@ ja
       
         
           
-          16进制加法表1+1= 2
-1+2= 3  | 2+2= 4
-1+3= 4  | 2+3= 5  | 3+3= 6
-1+4= 5  | 2+4= 6  | 3+4= 7  | 4+4= 8
-1+5= 6  | 2+5= 7  | 3+5= 8  | 4+5= 9  | 5+5= A
-1+6= 7  
+          推送1、添加当前工作目录文件到index
+    $ sudo git add .
+2、生成一个提交文件
+    $ sudo git commit -a -m &quot;commit first&quot;
+3、推送到github的XXX分支
+    $ sudo git push origin
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/08/15/16进制表/#more" rel="contents">
+            <a class="btn" href="/2018/05/18/hexo到github的推送和拉取/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1751,7 +1761,7 @@ ja
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
